@@ -1,8 +1,11 @@
 from flask import Flask, request, jsonify
 from models import db, Usuarios, Panes, Pedido
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
+
 port = 5000
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:postgres@localhost:5432/postgres'
@@ -11,7 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 @app.route('/')
 def hello_world():
-    return "hello world"
+    return jsonify({'message': 'hola mundo'})
 
 
 @app.route("/data/<section>")
