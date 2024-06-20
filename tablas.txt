@@ -2,25 +2,38 @@ db= sudo docker run --name subte -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=
 
 tablas:
 
-usuario:
-  -id
-  -nombre
+cliente:
+  -idCliente
+  -nombre_y_apellido
   -direccion
-  -¿?
+  -telefono
 
-panes:
-  -id
+pan:
+  -idPan 
   -tipo
   -precio
 
-rellenos:
-  -id
+base:
+  -idBase 
   -tipo 
   -precio 
 
+adicional:
+  -idAdicional 
+  -tipo
+  -precio
+
+salsa:
+  -idSalsa 
+  -tipo
+  -precio
+
 pedido:
-  -id
-  -nombreUsuario
-  -panes 
-  -rellenos 
-  -precio 
+  -idPedido PK
+  -idPan
+  -idBase
+  -idAdicional
+  -idSalsa
+  -idCliente
+  -fecha
+  -precio
