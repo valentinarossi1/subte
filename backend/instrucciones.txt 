@@ -1,0 +1,8 @@
+crear la base de datos -> sudo docker run --name subte -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=subte -p 5432:5432 -d postgres
+verificacion purerto -> sudo lsof -i tcp:5432
+sudo kill <PID>> 
+
+ingresar docker -> sudo docker exec -it subte bash
+ingresar db -> psql -U postgres --password (password=postgres)
+ingresar subte -> \connect subte (password=postgres)
+
