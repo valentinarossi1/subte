@@ -1,3 +1,5 @@
+dependencias: flask_cors, psycopg2
+
 crear la base de datos -> sudo docker run --name subte -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=subte -p 5432:5432 -d postgres
 verificacion purerto -> sudo lsof -i tcp:5432
 sudo kill <PID>> 
