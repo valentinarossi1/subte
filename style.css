@@ -7,6 +7,7 @@
 body{
     background-color: #F3E9DC;
     font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+    padding-top: 100px;/* Si la barra tapa el contenido, hay que modificar esto */
 }
 header{
     margin: 15px 25px 15px 25px;
@@ -17,6 +18,11 @@ header{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    padding: 10px;
+  
 }
 
 .navbar-contenedor {
@@ -71,7 +77,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     
 }
 
@@ -130,5 +136,39 @@ footer {
    margin-bottom: 0;
 }
 
+.sucursales-contenedor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
 
+.sucursales-elemento{
+    margin: 20px;
+    font-size: 25px;
+}
 
+.sucursales-elemento h4 {
+    padding: 7px;
+    color: #F3E9DC;
+    background-color: #498467;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+.sucursales-datos{
+    background-color:#F3E9DC;
+    border-style: solid;
+    border-color:#895737;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.sucursales-elemento p{
+    padding: 7px;
+    text-align: center;
+}
