@@ -25,7 +25,7 @@ header{
     justify-content:center;
     align-items: center;
     width: 100%;
-    padding: 15px; 
+    padding: 10px; 
     border-radius: 20px;
 }
 
@@ -33,6 +33,11 @@ header{
     display: flex;
     align-items: center;
     
+}
+
+.logo img{
+    height: 100%;
+    width: 170px;
 }
 
 .elementos-navbar{
@@ -54,3 +59,76 @@ header{
 .elementos-navbar a:hover {
     color: #498467;
 }
+
+
+footer {
+    background-color: #895737;
+    color: #F3E9DC;
+    padding: 20px;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.footer-contenedor {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.footer-elemento {
+    flex: 1;
+    margin: 10px;
+}
+
+.logo-footer img{
+    height:100px; 
+}
+
+.footer-elemento h4 {
+    padding: 7px;
+    background-color: #498467;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.footer-elemento ul {
+    list-style: none;
+}
+
+.footer-elemento ul li {
+    padding: 7px;
+}
+
+.footer-elemento ul li a {
+    color: #F3E9DC;
+    text-decoration: none;
+}
+
+.footer-elemento ul li a:hover {
+    color: #498467;
+}
+
+.footer-elemento p{
+    padding: 7px;
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.redes a{
+   margin: 10px;
+   margin-bottom: 0;
+}
+
+
+
