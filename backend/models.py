@@ -44,8 +44,8 @@ class Adicionales(db.Model):
     precio = db.Column(db.Integer, nullable=False)
 
 
-class Pedido(db.Model):
-    __tablename__ = 'Pedido'
+class Pedidos(db.Model):
+    __tablename__ = 'Pedidos'
 
     id_pedido = db.Column(db.Integer, primary_key=True)
     id_pan = db.Column(
