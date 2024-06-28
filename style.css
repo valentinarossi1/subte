@@ -21,8 +21,7 @@ header{
     position: fixed; 
     top: 0;
     left: 0;
-    padding: 10px;
-  
+    z-index: 100;
 }
 
 .navbar-contenedor {
@@ -31,8 +30,10 @@ header{
     justify-content:center;
     align-items: center;
     width: 100%;
-    padding: 10px; 
-    border-radius: 20px;
+    position: sticky;
+    top: 0;
+    height: 140px;
+    box-shadow: 0.5px 0px 5px black;
 }
 
 .logo {
@@ -43,7 +44,7 @@ header{
 
 .logo img{
     height: 100%;
-    width: 170px;
+    width: 250px;
 }
 
 .elementos-navbar{
@@ -59,16 +60,100 @@ header{
 .elementos-navbar a {
     text-decoration: none;
     color: #F3E9DC;
-    font-size:30px;
+    font-size:40px;
 }
 
 .elementos-navbar a:hover {
     color: #498467;
 }
 
+.carrusel-contenedor {
+    margin: 80px auto 0px;
+    height: 550px;
+    width: 900px;
+}
+.img-carrusel {
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+    width: 100%;
+    height: auto; 
+    display: none; 
+    animation: slide 1.5s ease-in-out;
+}
+.img-carrusel:first-child {
+    display: block;
+}
+
+.botones-carrusel {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 300px; 
+    width: 100%; 
+}
+
+.boton-slide {
+    background-color: #F3E9DC;
+    font-size: 100px;
+    font-weight:400;
+    opacity: 100%;
+    width: auto;
+    height: max-content;
+    margin-right: 500px;
+    margin-left: 500px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+.boton-slide:hover{
+    font-weight: 500;
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.boton-pedido-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.boton-pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#895737;
+    box-shadow: 1px 1px 10px black;
+    text-decoration: none;
+    font-size: 100px;
+    color:#F3E9DC;
+    cursor: pointer;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+.boton-pedido:hover {
+    color: #498467;
+    text-shadow: 0.2px 0.2px 8px black;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
 
 footer {
     background-color: #895737;
+    box-shadow: 0.5px 0px 5px black;
     color: #F3E9DC;
     padding: 20px;
     width: 100%;
@@ -78,7 +163,6 @@ footer {
     flex-direction: column;
     align-items: center;
 
-    
 }
 
 .footer-contenedor {

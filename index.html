@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
     <title>SUBTE</title>
   </head>
   <body>
@@ -27,47 +28,20 @@
       </nav>
     </header>
     <main>
-      <h1>BIENVENIDOS</h1>
-      <p>holaaa</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-        <br><br><br><br>Facere veritatis
-        harum culpa laborum, ex ipsa eum ad aperiam eaque non accusamus magni
-        dolorem eius id iste tempore corrupti repellat fugit.
-        <br><br><br>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet delectus quae,<br>
-        exercitationem quidem neque porro voluptatibus beatae doloremque dicta ipsum <br>
-        <br>
-        <br>
-        omnis blanditiis nisi eum, itaque doloribus atque aperiam, quo qui.
-        
-      </p>
-      
-    
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-        <br><br><br><br>Facere veritatis
-        harum culpa laborum, ex ipsa eum ad aperiam eaque non accusamus magni
-        dolorem eius id iste tempore corrupti repellat fugit.
-        <br><br><br>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet delectus quae,<br>
-        exercitationem quidem neque porro voluptatibus beatae doloremque dicta ipsum <br>
-        <br>
-        <br>
-        omnis blanditiis nisi eum, itaque doloribus atque aperiam, quo qui.
-        
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-        <br><br><br><br>Facere veritatis
-        harum culpa laborum, ex ipsa eum ad aperiam eaque non accusamus magni
-        dolorem eius id iste tempore corrupti repellat fugit.
-        <br><br><br>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet delectus quae,<br>
-        exercitationem quidem neque porro voluptatibus beatae doloremque dicta ipsum <br>
-      
-        
-      </p>
-
+      <div class="carrusel-contenedor">
+        <img class="img-carrusel" src="/WRAPS.jpg" alt="Proximamente wraps en subte">
+        <img class="img-carrusel" src="/SALSA.jpg" alt="Nueva salsa barbacoa">
+        <img class="img-carrusel" src="/DESCUENTO.jpg" alt="De jueves a domingo 10% off en el total de tu compra">
+  
+        <div class="botones-carrusel">
+          <button class="boton-slide" onclick="deslizarImagen(-1)">&#8249;</button>
+          <button class="boton-slide" onclick="deslizarImagen(+1)">&#8250;</button>
+  
+        </div>
+      </div>
+      <div class="boton-pedido-contenedor">
+        <a href="haceTuPedido.html" class="boton-pedido">HACE TU PEDIDO</a>
+      </div>
     </main>
     <footer>
       <div class="footer-contenedor">
