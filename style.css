@@ -7,7 +7,7 @@
 body{
     background-color: #F3E9DC;
     font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
-    padding-top: 100px;/* Si la barra tapa el contenido, hay que modificar esto */
+    padding-top: 130px;/* Si la barra tapa el contenido, hay que modificar esto */
 }
 header{
     margin: 15px 25px 15px 25px;
@@ -162,7 +162,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .footer-contenedor {
@@ -255,4 +254,69 @@ footer {
 .sucursales-elemento p{
     padding: 7px;
     text-align: center;
+}
+
+.paso{
+    margin: 30px;
+    margin-bottom: 0;
+    font-size: 40px;
+    color: #498467;
+}
+
+.formulario-datos-contenedor{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.formulario-datos-titulo{
+    color: #895737;
+    text-align: center;
+    font-size: 35px;
+}
+
+.formulario-datos{
+    background-color: #895737;
+    padding: 30px;
+    border-radius: 25px;
+    margin: auto;
+    box-shadow: 0.5px 0px 5px black;
+}
+
+.formulario-datos-campo{
+    color:#F3E9DC;
+    margin: 5px;
+    font-size: 30px;
+}
+
+.formulario-datos-campo input{
+    color:#F3E9DC;
+    background-color:#498467 ;
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px;
+    font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    
+    
+}
+
+.formulario-datos-boton{
+    text-align: right;
+}
+
+.formulario-datos-boton input, button{
+    color:#F3E9DC;
+    background-color:#498467;
+    font-family: inherit;
+    font-size: 20px;
+    border-style: none;
+    padding: 7px;
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
 }
