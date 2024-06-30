@@ -25,7 +25,7 @@ function mostrarImagen(indice){
 
 }
 
-function response_received(response) {
+/*function response_received(response) {
   return response.json();
 }
 
@@ -40,7 +40,7 @@ function parse_data(content) {
 
   for (let index = 0; index < content.length; index++) {
     const item = document.createElement("p");
-    item.innerHTML = <a href="/clientes?${content[index].id}" target=blank> ${content[index].nombre}</a> - direccion: ${content[index].direccion};
+    item.innerHTML = <a href="/clientes?${content[index].id}" target=<blank> ${content[index].nombre}</a> - direccion: ${content[index].direccion};
 
     container.append(item);
   }
@@ -50,3 +50,4 @@ fetch("http://localhost:5000/clientes")
   .then(response_received)
   .then(parse_data)
   .catch(request_error);
+*/
