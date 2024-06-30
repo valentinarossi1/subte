@@ -7,7 +7,7 @@
 body{
     background-color: #F3E9DC;
     font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
-    padding-top: 130px;/* Si la barra tapa el contenido, hay que modificar esto */
+    padding-top: 110px;/* Si la barra tapa el contenido, hay que modificar esto */
 }
 header{
     margin: 15px 25px 15px 25px;
@@ -32,7 +32,7 @@ header{
     width: 100%;
     position: sticky;
     top: 0;
-    height: 140px;
+    height: 120px;
     box-shadow: 0.5px 0px 5px black;
 }
 
@@ -93,10 +93,10 @@ header{
 }
 
 .boton-slide {
+    color:black;
     background-color: #F3E9DC;
     font-size: 100px;
     font-weight:400;
-    opacity: 100%;
     width: auto;
     height: max-content;
     margin-right: 500px;
@@ -108,7 +108,6 @@ header{
 
 .boton-slide:hover{
     font-weight: 500;
-    opacity: 100%;
     cursor: pointer;
 }
 
@@ -321,3 +320,8 @@ footer {
     cursor: pointer;
 }
 
+.texto-nosotros{
+    
+    position: relative;
+    bottom: 100px;
+}
