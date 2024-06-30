@@ -26,6 +26,8 @@ class Clientes(db.Model):
     nombre_apellido = db.Column(db.String(255), nullable=False)
     direccion = db.Column(db.String(255), nullable=False)
     telefono = db.Column(db.Integer, nullable=False)
+    mail = db.Column(db.String(255), nullable=False)
+
 
 
 class Salsas(db.Model):

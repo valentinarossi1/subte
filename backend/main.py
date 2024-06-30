@@ -1,6 +1,6 @@
 from flask_cors import CORS
 from flask import Flask, jsonify, request
-from models import db, Clientes, Panes
+from models import db, Clientes, Panes,Pedidos
 
 
 app = Flask(__name__)
@@ -53,7 +53,9 @@ def Listar_clientes():
             dato_cliente = {
                 'id': cliente.id_cliente,
                 'nombre': cliente.nombre_apellido,
-                'direccion': cliente.direccion
+                'direccion': cliente.direccion,
+                'telefono': cliente.telefono,
+                'mail':cliente.mail
             }
             clientes_datos.append(dato_cliente)
 
@@ -84,30 +86,33 @@ def data_cliente(id_cliente):
 
 
 @app.route("/clientes", methods=["POST"])
-def nuevo_usuario():
+def nuevo_cliente():
 
     data = request.json
     try:
         nuevo_nombre = data.get('nombre_apellido')
         nueva_direccion = data.get('direccion')
         nuevo_telefono = data.get('telefono')
+        nuevo_mail = data.get('mail')
 
         nuevo_cliente = Clientes(nombre_apellido=nuevo_nombre,
                                  direccion=nueva_direccion,
-                                 telefono=nuevo_telefono)
-
+                                 telefono=nuevo_telefono, mail=nuevo_mail)
         db.session.add(nuevo_cliente)
         db.session.commit()
 
         return jsonify(
             {'cliente':
-                {'id_cliente': nuevo_cliente.id_cliente,
-                 'name': nuevo_cliente.nombre_apellido,
-                 'precio': nuevo_cliente.telefono}}
+                {'nombre_apellido': nuevo_cliente.nombre,
+                  'direccion' : nuevo_cliente.direccion,
+                  'telefono': nuevo_cliente.telefono,
+                 'mail': nuevo_cliente.mail}}
+
         ), 201
 
     except Exception as e:
         return jsonify(f"no se  pudo :{e})"), 400
+
 
 
 if __name__ == '__main__':
