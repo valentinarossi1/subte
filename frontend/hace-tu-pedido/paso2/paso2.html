@@ -1,203 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="../../style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../../style.css" rel="stylesheet" />
     <script src="../../script.js"></script>
     <title>SUBTE</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-          <div class="navbar-contenedor">
-            <a class="logo" href="../../index.html"><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"></a>
-            <div class="menu-navbar">
-              <ul class="elementos-navbar">
-                <li><a href="../hacetupedido.html">Hace tu pedido</a></li>
-                <li><a href="../../nosotros/nosotros.html">Nosotros</a></li>
-                <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
-                <li><a href="../../ver-pedidos/index.html">Ver mis pedidos</a></li>
-                
-              </ul>
+      <nav class="navbar">
+        <div class="navbar-contenedor">
+          <a class="logo" href="../../index.html"
+            ><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"
+          /></a>
+          <div class="menu-navbar">
+            <ul class="elementos-navbar">
+              <li><a href="../hacetupedido.html">Hace tu pedido</a></li>
+              <li><a href="../../nosotros/nosotros.html">Nosotros</a></li>
+              <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
+              <li>
+                <a href="../../ver-pedidos/index.html">Ver mis pedidos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>HOOLLAA</h1>
+      <h4 class="paso">2° PASO: ELEGI TU PAN</h4>
+      <div class="opciones-contenedor">
+        <form class="form-opciones" action=".">
+          <div class="opcion">
+            <img src="../../imagenes/panBlanco.png" alt="pan blanco" />
+            <h6 class="descripciones">Pan blanco - $1000</h6>
+            <div class="seleccionar">
+              <input type="radio" id="pan-blanco" name="pan" />
             </div>
           </div>
-        </nav>
-      </header>
-
-      <main>
-        <h4 class="paso">2° PASO: ELEGI TU PAN</h4>
-        <div class="opciones-contenedor">
-          <form class="form-opciones" action=".">
-              <div class="opcion">
-                  <img src="../../imagenes/panBlanco.png" alt="pan blanco">
-                  <h6 class="descripciones">Pan blanco - $1000</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="pan-blanco" name="pan">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/panIntegral.png" alt="pan integral">
-                  <h6 class="descripciones">Pan integral - $1000</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="pan-integral" name="pan">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/panSinTacc.png" alt="pan sin tacc">
-                  <h6 class="descripciones">Pan sin TACC - $1000</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="pan-sin-tacc" name="pan">
-                  </div>
-              </div>   
-          </form>        
+          <div class="opcion">
+            <img src="../../imagenes/panIntegral.png" alt="pan integral" />
+            <h6 class="descripciones">Pan integral - $1000</h6>
+            <div class="seleccionar">
+              <input type="radio" id="pan-integral" name="pan" />
+            </div>
+          </div>
+          <div class="opcion">
+            <img src="../../imagenes/panSinTacc.png" alt="pan sin tacc" />
+            <h6 class="descripciones">Pan sin TACC - $1000</h6>
+            <div class="seleccionar">
+              <input type="radio" id="pan-sin-tacc" name="pan" />
+            </div>
+          </div>
+        </form>
       </div>
 
       <h4 class="paso">3° PASO: ELEGI TU BASE</h4>
       <div class="opciones-contenedor">
         <form class="form-opciones" action=".">
-            <div class="opcion">
-                <img src="../../imagenes/carne.png" alt="carne">
-                <h6 class="descripciones">Carne - $2500</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="carne" name="base">
-                </div>
+          <div class="opcion">
+            <img src="../../imagenes/carne.png" alt="carne" />
+            <h6 class="descripciones">Carne - $2500</h6>
+            <div class="seleccionar">
+              <input type="radio" id="carne" name="base" />
             </div>
-            <div class="opcion">
-                <img src="../../imagenes/pollo.png" alt="pollo">
-                <h6 class="descripciones">Pollo - $2000</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="pollo" name="base">
-                </div>
+          </div>
+          <div class="opcion">
+            <img src="../../imagenes/pollo.png" alt="pollo" />
+            <h6 class="descripciones">Pollo - $2000</h6>
+            <div class="seleccionar">
+              <input type="radio" id="pollo" name="base" />
             </div>
-            <div class="opcion">
-                <img src="../../imagenes/tofu.png" alt="tofu">
-                <h6 class="descripciones">Tofu - $2700</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="tofu" name="base">
-                </div>
-            </div>   
-        </form>        
-    </div>
+          </div>
+          <div class="opcion">
+            <img src="../../imagenes/tofu.png" alt="tofu" />
+            <h6 class="descripciones">Tofu - $2700</h6>
+            <div class="seleccionar">
+              <input type="radio" id="tofu" name="base" />
+            </div>
+          </div>
+        </form>
+      </div>
 
-    <h4 class="paso">4° PASO: ELEGI TU ADICIONAL</h4>
-        <div class="opciones-contenedor">
-          <form class="form-opciones" action=".">
-              <div class="opcion">
-                  <img src="../../imagenes/tomate_y_lechuga.png" alt="lechuga-y-tomate">
-                  <h6 class="descripciones">Lechuga y tomate - $1000</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="lechuga-y-tomate" name="adicional">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/jamon_y_queso.png" alt="jamon-y-queso">
-                  <h6 class="descripciones">Jamon y queso- $1500</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="jamon-y-queso" name="adicional">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/cheddar_y_bacon.png" alt="cheddar-y-bacon">
-                  <h6 class="descripciones">Cheddar y bacon - $1900</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="cheddar-y-bacon" name="adicional">
-                  </div>
-              </div>   
-          </form>        
+      <h4 class="paso">4° PASO: ELEGI TU ADICIONAL</h4>
+      <div class="opciones-contenedor">
+        <form class="form-opciones" action=".">
+          <div class="opcion">
+            <img
+              src="../../imagenes/tomate_y_lechuga.png"
+              alt="lechuga-y-tomate"
+            />
+            <h6 class="descripciones">Lechuga y tomate - $1000</h6>
+            <div class="seleccionar">
+              <input type="radio" id="lechuga-y-tomate" name="adicional" />
+            </div>
+          </div>
+          <div class="opcion">
+            <img src="../../imagenes/jamon_y_queso.png" alt="jamon-y-queso" />
+            <h6 class="descripciones">Jamon y queso- $1500</h6>
+            <div class="seleccionar">
+              <input type="radio" id="jamon-y-queso" name="adicional" />
+            </div>
+          </div>
+          <div class="opcion">
+            <img
+              src="../../imagenes/cheddar_y_bacon.png"
+              alt="cheddar-y-bacon"
+            />
+            <h6 class="descripciones">Cheddar y bacon - $1900</h6>
+            <div class="seleccionar">
+              <input type="radio" id="cheddar-y-bacon" name="adicional" />
+            </div>
+          </div>
+        </form>
       </div>
 
       <h4 class="paso">5° PASO: ELEGI TU SALSA</h4>
-        <div class="salsa-contenedor">
-          <form class="form-salsas" action=".">
-              <div class="opcion">
-                  <img src="../../imagenes/mayonesa.png" alt="mayonesa">
-                  <h6 class="descripciones">Mayonesa - $500</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="mayonesa" name="salsa">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/ketchup.png" alt="ketchup">
-                  <h6 class="descripciones">Ketchup - $500</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="ketchup" name="salsa">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/mostaza.png" alt="mostaza">
-                  <h6 class="descripciones">Mostaza - $500</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="mostaza" name="salsa">
-                  </div>
-              </div>  
-              <div class="opcion">
-                <img src="../../imagenes/barbacoa.png" alt="barbacoa">
-                <h6 class="descripciones">Barbacoa - $500</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="barbacoa" name="salsa">
-                </div>
-                </div>
-              <div class="opcion">
-                <img src="../../imagenes/salas_golf.png" alt="salsa-golf">
-                <h6 class="descripciones">Salsa golf - $500</h6>
-                <div class="seleccionar">   
-                  <input type="radio" id="salsa-golf" name="salsa">
-                </div>
-              </div>
-              <div class="opcion">
-                <img src="../../imagenes/sin_salsa.png" alt="sin-salsa">
-                <h6 class="descripciones">Sin salsa - $0</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="sin-salsa" name="salsa">
-                 </div>
-              </div> 
-              <div class="finalizar-pedido-boton">
-                <input type="button" value="FINALIZAR" onclick="guardarDatos()">
-              </div>
-          </form>        
-        </div>
-      
-      
-        
-      </main>
-
-      <footer>
-        <div class="footer-contenedor">
-          <a class="logo-footer" href="../../index.html"><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"></a>
-          <div class="footer-elemento">
-            <h4>Información</h4>
-            <ul>
-              <li><a href="../../nosotros/nosotros.html">Quienes somos</a></li>
-              <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
-              <li><a href="/">FAQ</a></li>
-            </ul>
+      <div class="salsa-contenedor">
+        <form class="form-salsas" action=".">
+          <div class="opcion">
+            <img src="../../imagenes/mayonesa.png" alt="mayonesa" />
+            <h6 class="descripciones">Mayonesa - $500</h6>
+            <div class="seleccionar">
+              <input type="radio" id="mayonesa" name="salsa" />
+            </div>
           </div>
-          <div class="footer-elemento">
-            <h4>Sobre Subte</h4>
-            <p>Dirección: Calle 123</p>
-            <p>Teléfono: (011) 123-4567</p>
-            <p>Email: info@subte.com</p>
+          <div class="opcion">
+            <img src="../../imagenes/ketchup.png" alt="ketchup" />
+            <h6 class="descripciones">Ketchup - $500</h6>
+            <div class="seleccionar">
+              <input type="radio" id="ketchup" name="salsa" />
+            </div>
           </div>
-          <div class="footer-elemento">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="/">Terminos y condiciones</a></li>
-              <li><a href="/">Politica de privacidad</a></li>
-              <li><a href="/">Defensa del consumidor</a></li>
-            </ul>
-          </div>   
-        </div>
-        <div class="redes">
-          <a href="/"><img src="../../imagenes/logo_facebook.png" alt="Facebook"></a>
-          <a href="/"><img src="../../imagenes/logo_x.png" alt="X"></a>
-          <a href="/"><img src="../../imagenes/logo_instagram.png" alt="Instagram"></a>
-        </div>
-      </footer>
+          <div class="opcion">
+            <img src="../../imagenes/mostaza.png" alt="mostaza" />
+            <h6 class="descripciones">Mostaza - $500</h6>
+            <div class="seleccionar">
+              <input type="radio" id="mostaza" name="salsa" />
+            </div>
+          </div>
+          <div class="opcion">
+            <img src="../../imagenes/barbacoa.png" alt="barbacoa" />
+            <h6 class="descripciones">Barbacoa - $500</h6>
+            <div class="seleccionar">
+              <input type="radio" id="barbacoa" name="salsa" />
+            </div>
+          </div>
+          <div class="opcion">
+            <img src="../../imagenes/salas_golf.png" alt="salsa-golf" />
+            <h6 class="descripciones">Salsa golf - $500</h6>
+            <div class="seleccionar">
+              <input type="radio" id="salsa-golf" name="salsa" />
+            </div>
+          </div>
+          <div class="opcion">
+            <img src="../../imagenes/sin_salsa.png" alt="sin-salsa" />
+            <h6 class="descripciones">Sin salsa - $0</h6>
+            <div class="seleccionar">
+              <input type="radio" id="sin-salsa" name="salsa" />
+            </div>
+          </div>
+          <div class="finalizar-pedido-boton">
+            <input type="button" value="FINALIZAR" onclick="guardarDatos()" />
+          </div>
+        </form>
+      </div>
+    </main>
 
-     <!--  <script src="script.js"></script> -->
-</body>
+    <footer>
+      <div class="footer-contenedor">
+        <a class="logo-footer" href="../../index.html"
+          ><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"
+        /></a>
+        <div class="footer-elemento">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="../../nosotros/nosotros.html">Quienes somos</a></li>
+            <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
+            <li><a href="/">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-elemento">
+          <h4>Sobre Subte</h4>
+          <p>Dirección: Calle 123</p>
+          <p>Teléfono: (011) 123-4567</p>
+          <p>Email: info@subte.com</p>
+        </div>
+        <div class="footer-elemento">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/">Terminos y condiciones</a></li>
+            <li><a href="/">Politica de privacidad</a></li>
+            <li><a href="/">Defensa del consumidor</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="redes">
+        <a href="/"
+          ><img src="../../imagenes/logo_facebook.png" alt="Facebook"
+        /></a>
+        <a href="/"><img src="../../imagenes/logo_x.png" alt="X" /></a>
+        <a href="/"
+          ><img src="../../imagenes/logo_instagram.png" alt="Instagram"
+        /></a>
+      </div>
+    </footer>
+
+    <!--  <script src="script.js"></script> -->
+  </body>
 </html>
+
