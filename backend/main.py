@@ -1,6 +1,6 @@
 from flask_cors import CORS
 from flask import Flask, jsonify, request
-from models import db, Clientes, Panes,Pedidos
+from models import db, Clientes, Panes, Pedidos
 
 
 app = Flask(__name__)
@@ -55,7 +55,7 @@ def Listar_clientes():
                 'nombre': cliente.nombre_apellido,
                 'direccion': cliente.direccion,
                 'telefono': cliente.telefono,
-                'mail':cliente.mail
+                'mail': cliente.mail
             }
             clientes_datos.append(dato_cliente)
 
@@ -103,16 +103,15 @@ def nuevo_cliente():
 
         return jsonify(
             {'cliente':
-                {'nombre_apellido': nuevo_cliente.nombre,
-                  'direccion' : nuevo_cliente.direccion,
-                  'telefono': nuevo_cliente.telefono,
+                {'nombre_apellido': nuevo_cliente.nombre_apellido,
+                 'direccion': nuevo_cliente.direccion,
+                 'telefono': nuevo_cliente.telefono,
                  'mail': nuevo_cliente.mail}}
 
         ), 201
 
     except Exception as e:
         return jsonify(f"no se  pudo :{e})"), 400
-
 
 
 if __name__ == '__main__':
