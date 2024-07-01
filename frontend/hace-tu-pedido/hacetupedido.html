@@ -35,7 +35,7 @@
                 <h4>Ingresa tus datos</h4>
             </div>
             <div class="formulario-datos">
-                <form action="POST">
+                <form id="formulario-datos" action="POST">
                     <div class="formulario-datos-campo">
                         <label for="nombre-apellido">Nombre y apellido</label>
                         <input type="text" id="nombre-apellido" name="nombre-apellido" required>
@@ -53,8 +53,7 @@
                         <input type="email" id="mail" name="mail" required>
                     </div>
                     <div class="formulario-datos-boton">
-                        <input type="button" value="Siguiente" onclick="">
-                        <button type="submit">Siguiente</button>
+                      <input type="button" value="Siguiente" onclick="guardarDatos()">
                     </div>
                 </form>
             </div>
@@ -94,5 +93,7 @@
           <a href="/"><img src="../imagenes/logo_instagram.png" alt="Instagram"></a>
         </div>
       </footer>
+
+      <script src="script.js"></script>
 </body>
 </html>

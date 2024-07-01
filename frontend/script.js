@@ -50,3 +50,4 @@ fetch("http://localhost:5000/clientes")
   .then(response_received)
   .then(parse_data)
   .catch(request_error);
+
