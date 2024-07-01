@@ -116,7 +116,7 @@ header{
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 250px;
 }
 
 .boton-pedido {
@@ -133,6 +133,7 @@ header{
     border: none;
     border-radius: 50px;
     animation: pedido 2s infinite;
+    position: absolute;
 }
 
 .boton-pedido:hover {
@@ -251,7 +252,7 @@ header{
     margin: 0 auto;
     font-size: 25px;
     width: 750px;
-    bottom: 120px;
+    bottom: 100px;
 }
 
 .texto-frescura h2, .texto-frescura p{
@@ -266,7 +267,6 @@ footer {
     color: #F3E9DC;
     padding: 20px;
     width: 100%;
-    margin-top: 30px;
     font-size: 17px;
     display: flex;
     flex-direction: column;
