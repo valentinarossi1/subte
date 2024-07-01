@@ -138,6 +138,47 @@ header{
     text-shadow: 0.2px 0.2px 8px black;
 }
 
+
+
+.form-opciones{
+    display: flex;
+    justify-content: center;
+}
+
+.salsa-contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.form-salsas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.opcion{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.descripciones {
+    font-size: 20px;
+    color: #895737;
+}
+
+.opcion img{
+    justify-content: center;
+    width: 300px;
+    height: 250px;
+    display: block;
+    margin: 30px 30px 10px 30px;
+    background-color:#895737;
+    border-radius: 30px;
+    box-shadow: 1px 1px 5px black;
+}
+
+
+
 @keyframes slide {
     from {
         opacity: 0;
@@ -325,3 +366,4 @@ footer {
     position: relative;
     bottom: 100px;
 }
+
