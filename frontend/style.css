@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+
 body{
     background-color: #F3E9DC;
     font-family: "Bebas Neue", Arial, Helvetica, sans-serif;
@@ -131,14 +132,13 @@ header{
     padding: 20px;
     border: none;
     border-radius: 50px;
+    animation: pedido 2s infinite;
 }
 
 .boton-pedido:hover {
     color: #498467;
     text-shadow: 0.2px 0.2px 8px black;
 }
-
-
 
 .form-opciones{
     display: flex;
@@ -177,18 +177,40 @@ header{
     box-shadow: 1px 1px 5px black;
 }
 
+.seleccionar input{
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    accent-color:#895737;
+}  
+
+/*.opcion:hover {
+    transform: scale(1.05); 
+}*/
 
 
 @keyframes slide {
     from {
         opacity: 0;
-        transform: translateX(0%);
     }
     to {
         opacity: 1;
-        transform: translateX(0%);
     }
 }
+
+@keyframes pedido {
+
+    0% {
+        font-size: 100px;    
+    }
+    50% {
+        font-size: 105px;
+    }
+    100% {
+        font-size: 100px;
+    }
+}
+
 
 
 footer {

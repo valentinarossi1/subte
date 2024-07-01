@@ -1,4 +1,5 @@
 let indiceImagen = 0;
+
 mostrarImagen(indiceImagen); /*muestra la primera imagen*/
 
 function deslizarImagen(i) {
@@ -50,4 +51,3 @@ fetch("http://localhost:5000/clientes")
   .then(response_received)
   .then(parse_data)
   .catch(request_error);
-
