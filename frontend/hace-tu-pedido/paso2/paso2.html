@@ -20,7 +20,7 @@
                 <li><a href="../hacetupedido.html">Hace tu pedido</a></li>
                 <li><a href="../../nosotros/nosotros.html">Nosotros</a></li>
                 <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
-                <li><a href="">Contactanos</a></li>
+                <li><a href="../../ver-pedidos/index.html">Ver mis pedidos</a></li>
                 
               </ul>
             </div>
@@ -140,23 +140,27 @@
                 <div class="seleccionar">   
                     <input type="radio" id="barbacoa" name="salsa">
                 </div>
-            </div>
-            <div class="opcion">
-              <img src="../../imagenes/salas_golf.png" alt="salsa-golf">
-              <h6 class="descripciones">Salsa golf - $500</h6>
-              <div class="seleccionar">   
+                </div>
+              <div class="opcion">
+                <img src="../../imagenes/salas_golf.png" alt="salsa-golf">
+                <h6 class="descripciones">Salsa golf - $500</h6>
+                <div class="seleccionar">   
                   <input type="radio" id="salsa-golf" name="salsa">
+                </div>
               </div>
-          </div>
-          <div class="opcion">
-            <img src="../../imagenes/sin_salsa.png" alt="sin-salsa">
-            <h6 class="descripciones">Sin salsa - $0</h6>
-            <div class="seleccionar">   
-                <input type="radio" id="sin-salsa" name="salsa">
-            </div>
-        </div> 
+              <div class="opcion">
+                <img src="../../imagenes/sin_salsa.png" alt="sin-salsa">
+                <h6 class="descripciones">Sin salsa - $0</h6>
+                <div class="seleccionar">   
+                    <input type="radio" id="sin-salsa" name="salsa">
+                 </div>
+              </div> 
+              <div class="finalizar-pedido-boton">
+                <input type="button" value="FINALIZAR" onclick="guardarDatos()">
+              </div>
           </form>        
-      </div>
+        </div>
+      
       
         
       </main>
@@ -194,6 +198,6 @@
         </div>
       </footer>
 
-      <script src="script.js"></script>
+     <!--  <script src="script.js"></script> -->
 </body>
 </html>

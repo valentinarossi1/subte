@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="../style.css" rel="stylesheet">
-    <script src="../script.js"></script>
     <title>SUBTE</title>
 </head>
 <body>
@@ -17,50 +16,18 @@
             <a class="logo" href="../index.html"><img src="../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"></a>
             <div class="menu-navbar">
               <ul class="elementos-navbar">
-                <li><a href="hacetupedido.html">Hace tu pedido</a></li>
+                <li><a href="../hace-tu-pedido/hacetupedido.html">Hace tu pedido</a></li>
                 <li><a href="../nosotros/nosotros.html">Nosotros</a></li>
                 <li><a href="../sucursales/sucursales.html">Sucursales</a></li>
-                <li><a href="../ver-pedidos/index.html">Ver pedidos</a></li>
+                <li><a href="index.html">Ver pedidos</a></li>
                 
               </ul>
             </div>
           </div>
         </nav>
-      </header>
 
-      <main>
-        <h4 class="paso">1° PASO</h4>
-        <div class="formulario-datos-contenedor">
-            <div class="formulario-datos-titulo">
-                <h4>Ingresa tus datos</h4>
-            </div>
-            <div class="formulario-datos">
-                <form id="formulario-datos" action=".">
-                    <div class="formulario-datos-campo">
-                        <label for="nombre-apellido">Nombre y apellido</label>
-                        <input type="text" id="nombre-apellido" name="nombre-apellido" required>
-                    </div>
-                    <div class="formulario-datos-campo">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" id="direccion" name="direccion" required>
-                    </div>
-                    <div class="formulario-datos-campo">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="123-4567-8901" required>
-                    </div>
-                    <div class="formulario-datos-campo">
-                        <label for="nombre-apellido">Mail</label>
-                        <input type="email" id="mail" name="mail" required>
-                    </div>
-                    <div class="formulario-datos-boton">
-                      <!-- <input type="button" value="Siguiente" onclick="guardarDatos()"> -->
-                      <button type="submit" onclick="pasarPagina()">Siguiente</button>
-                    </div>
-                </form>
-            </div>
-			
-        </div>
-      </main>
+      
+      </header>
 
       <footer>
         <div class="footer-contenedor">
@@ -94,7 +61,3 @@
           <a href="/"><img src="../imagenes/logo_instagram.png" alt="Instagram"></a>
         </div>
       </footer>
-
-      <script src="script.js"></script>
-</body>
-</html>

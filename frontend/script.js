@@ -1,5 +1,7 @@
 let indiceImagen = 0;
-mostrarImagen(indiceImagen);   /*muestra la primera imagen*/
+
+mostrarImagen(indiceImagen);  /*muestra la primera imagen*/
+
 
 function deslizarImagen(i){
   indiceImagen += i
