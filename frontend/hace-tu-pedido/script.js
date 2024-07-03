@@ -1,6 +1,5 @@
 let mail;
 
-
 function handle_response(data) {
   if (data != null) {
     window.location.href = `paso2?mail=${mail}`;
