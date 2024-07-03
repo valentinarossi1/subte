@@ -29,59 +29,89 @@
       </header>
 
       <main>
-        <h4 class="paso">2° PASO: ELEGI TU PAN</h4>
-        <div class="opciones-contenedor">
-          <form class="form-opciones" action=".">
+      
+          <form class="form-opciones" onsubmit="crearCliente(event)"">
+            <div class="opciones-contenedor">
+              <h4 class="paso">2° PASO: ELEGI TU PAN</h4>
               <div class="opcion">
+                <label class="form-check-label" for="1">
                   <img src="../../imagenes/panBlanco.png" alt="pan blanco">
-                  <h6 class="descripciones">Pan blanco - $1000</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="pan-blanco" name="pan">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/panIntegral.png" alt="pan integral">
-                  <h6 class="descripciones">Pan integral - $1000</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="pan-integral" name="pan">
-                  </div>
-              </div>
-              <div class="opcion">
-                  <img src="../../imagenes/panSinTacc.png" alt="pan sin tacc">
-                  <h6 class="descripciones">Pan sin TACC - $1000</h6>
-                  <div class="seleccionar">   
-                      <input type="radio" id="pan-sin-tacc" name="pan">
-                  </div>
-              </div>   
-          </form>        
-      </div>
+                  Pan blanco - $1000
+                </label>
+                <div class="seleccionar">
+                  <input class="form-check-input" value=1 type="radio" name="pan"
+                    id="1" required ><!-- Este es el id que mando a la tabla pedidos creo -->
+                </div>
+                
 
-      <h4 class="paso">3° PASO: ELEGI TU BASE</h4>
-      <div class="opciones-contenedor">
-        <form class="form-opciones" action=".">
-            <div class="opcion">
-                <img src="../../imagenes/carne.png" alt="carne">
-                <h6 class="descripciones">Carne - $2500</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="carne" name="base">
+                
+              </div>
+              <div class="opcion">
+                <label class="form-check-label" for="2">
+                  <img src="../../imagenes/panIntegral.png" alt="pan integral">
+                  Pan integral - $1000
+                </label>
+                <div class="seleccionar">
+                  <input class="form-check-input" value=2 type="radio" name="pan"
+                    id="2" required ><!-- Este es el id que mando a la tabla pedidos creo -->
                 </div>
+                
+              </div>
+              <div class="opcion">
+                <label class="form-check-label" for="3">
+                  <img src="../../imagenes/panSinTacc.png" alt="pan sin tacc">
+                  Pan sin TACC - $1000
+                </label>
+                <div class="seleccionar">
+                  <input class="form-check-input" value=3 type="radio" name="pan"
+                    id="3" required ><!-- Este es el id que mando a la tabla pedidos creo -->
+                </div>
+              </div>
             </div>
-            <div class="opcion">
-                <img src="../../imagenes/pollo.png" alt="pollo">
-                <h6 class="descripciones">Pollo - $2000</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="pollo" name="base">
+
+            <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+            <div class="opciones-contenedor">
+              <h4 class="paso">3° PASO: ELEGI TU BASE</h4>
+              <div class="opcion">
+                <label class="form-check-label" for="4">
+                  <img src="../../imagenes/carne.png" alt="carne">
+                  Carne - $2500
+                </label>
+                <div class="seleccionar">
+                  <input class="form-check-input" value=1 type="radio" name="base"
+                    id="4" required ><!-- Este es el id que mando a la tabla pedidos creo -->
                 </div>
+              </div>
+              <div class="opcion">
+                <label class="form-check-label" for="5">
+                  <img src="../../imagenes/pollo.png" alt="pollo">
+                  Pollo - $2000
+                </label>
+                <div class="seleccionar">
+                  <input class="form-check-input" value=2 type="radio" name="base"
+                    id="5" required ><!-- Este es el id que mando a la tabla pedidos creo -->
+                </div>
+                
+              </div>
+              <div class="opcion">
+                <label class="form-check-label" for="6">
+                  <img src="../../imagenes/tofu.png" alt="tofu">
+                  Tofu - $2700
+                </label>
+                <div class="seleccionar">
+                  <input class="form-check-input" value=3 type="radio" name="base"
+                    id="6" required ><!-- Este es el id que mando a la tabla pedidos creo -->
+                </div>
+              </div>
             </div>
-            <div class="opcion">
-                <img src="../../imagenes/tofu.png" alt="tofu">
-                <h6 class="descripciones">Tofu - $2700</h6>
-                <div class="seleccionar">   
-                    <input type="radio" id="tofu" name="base">
-                </div>
-            </div>   
-        </form>        
-    </div>
+
+            <div class="formulario-datos-boton">
+              <button type="submit">Siguiente</button>
+            </div>
+          </form>  
+       <!--  
+      <
 
     <h4 class="paso">4° PASO: ELEGI TU ADICIONAL</h4>
         <div class="opciones-contenedor">
@@ -161,7 +191,7 @@
           </form>        
         </div>
       
-      
+       -->
         
       </main>
 
@@ -198,6 +228,5 @@
         </div>
       </footer>
 
-     <!--  <script src="script.js"></script> -->
 </body>
 </html>
