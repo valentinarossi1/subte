@@ -9,7 +9,6 @@ class Panes(db.Model):
     id_pan = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     precio = db.Column(db.Integer, nullable=False)
-    imagen = db.Column(db.String(255), nullable=False)
 
 
 class Bases(db.Model):
