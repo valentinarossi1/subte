@@ -1,14 +1,15 @@
 function handle_response(data) {
   if (data != null) {
-    window.location.href = `../index.html`;
+    window.location.href = 'paso2/paso2.html';
   } else {
     console.log(data);
-    alert("eRROR");
+    alert("ERROR");
   }
 }
 
 function crearCliente(datos) {
   datos.preventDefault();
+  alert("ERRsdsdOR");
 
   datosForm = new FormData(datos.target);
 
@@ -31,5 +32,5 @@ function crearCliente(datos) {
   })
     .then((res) => res.json())
     .then(handle_response)
-    .then((error) => console.loog("Error: ", error));
+    .then((error) => console.log("Error: ", error));
 }
