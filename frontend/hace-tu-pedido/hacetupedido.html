@@ -35,7 +35,7 @@
                 <h4>Ingresa tus datos</h4>
             </div>
             <div class="formulario-datos">
-                <form id="formulario-datos" action=".">
+              <form id="formulario-datos" onsubmit="crearCliente(event)">
                     <div class="formulario-datos-campo">
                         <label for="nombre-apellido">Nombre y apellido</label>
                         <input type="text" id="nombre-apellido" name="nombre-apellido" required>
@@ -53,8 +53,7 @@
                         <input type="email" id="mail" name="mail" required>
                     </div>
                     <div class="formulario-datos-boton">
-                      <!-- <input type="button" value="Siguiente" onclick="guardarDatos()"> -->
-                      <button type="submit" onclick="pasarPagina()">Siguiente</button>
+                      <button type="submit">Siguiente</button>
                     </div>
                 </form>
             </div>
