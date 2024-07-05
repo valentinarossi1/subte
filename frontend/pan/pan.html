@@ -38,13 +38,13 @@
 
       <div class="opciones-contenedor" id="panes_parser">
         <div class="opcion">
-          <img src="panBlanco.jpg" alt="pan blanco" />
+          <img src="../imagenes/panBlanco.png" alt="pan blanco" />
         </div>
         <div class="opcion">
-          <img src="panIntegral.jpg" alt="pan integral" />
+          <img src="../imagenes/panIntegral.png" alt="pan integral" />
         </div>
         <div class="opcion">
-          <img src="panSinTacc.jpg" alt="pan sin tacc" />
+          <img src="../imagenes/panSinTacc.png" alt="pan sin tacc" />
         </div>
       </div>
 
@@ -101,11 +101,25 @@
           const container = document.getElementById("panes_parser");
 
           for (let index = 0; index < content.length; index++) {
-            const item = document.createElement("p");
-            item.innerHTML = `<a href="/cclientes?${content[index].id}" target=blank> ${content[index].nombre}</a> - precio: ${content[index].precio}`;
-            console.log(item);
+            const item = document.createElement("li");
 
-            container.append(item);
+            const image = document.createElement("img");
+            image.setAttribute("src", `${content[index].imagen}`);
+            image.setAttribute("alt", "Product image");
+
+            const link = document.createElement("a");
+            link.textContent = `${content[index].nombre}`;
+            link.setAttribute("hhref", `/cclientes?${content[index].id}`);
+            link.setAttribute("target", "_blank");
+
+            const price = document.createElement("span");
+            price.textContent = ` - precio : ${content[index].precio}`;
+
+            item.appendChild(image);
+            item.appendChild(link);
+            item.appendChild(price);
+
+            container.appendChild(item);
           }
         }
 

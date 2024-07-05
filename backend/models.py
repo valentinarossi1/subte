@@ -29,7 +29,6 @@ class Clientes(db.Model):
     mail = db.Column(db.String(255), nullable=False)
 
 
-
 class Salsas(db.Model):
     __tablename__ = 'Salsas'
 

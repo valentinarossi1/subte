@@ -31,6 +31,7 @@ def Listar_panes():
                 'id_pan': pan.id_pan,
                 'nombre': pan.nombre,
                 'precio': pan.precio
+
             }
             panes_datos.append(dato_pan)
 
