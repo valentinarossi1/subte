@@ -394,6 +394,7 @@ footer {
     width: 100%;
     max-width: 500px;
     margin: auto;
+    margin-bottom: 70px;
 }
 
 .formulario-datos-titulo{
