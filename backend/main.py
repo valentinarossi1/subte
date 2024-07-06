@@ -1,5 +1,5 @@
 from flask_cors import CORS
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from models import db, Clientes, Panes,Pedidos
 
 
@@ -113,7 +113,10 @@ def nuevo_cliente():
     except Exception as e:
         return jsonify(f"no se  pudo :{e})"), 400
 
+@app.errorhandler(404)
+def pagina_no_encontrada(error):
 
+    return render_template('./404.html'), 404
 
 if __name__ == '__main__':
     print('Starting server...')
