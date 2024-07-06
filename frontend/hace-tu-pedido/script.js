@@ -3,25 +3,21 @@ let mail;
 function handle_response(data) {
   if (data != null) {
     window.location.href = `paso2?mail=${mail}`;
-    alert("todo b   ien :D")
   } else {
     console.log(data);
     alert("ERROR");
   }
 }
 
-
-
 function crearCliente(datos) {
   datos.preventDefault();
-  
 
   datosForm = new FormData(datos.target);
 
   const nombreApellido = datosForm.get("nombre-apellido");
   const direccion = datosForm.get("direccion");
   const telefono = datosForm.get("telefono");
-   mail = datosForm.get("mail");
+  mail = datosForm.get("mail");
 
   fetch("http://localhost:5000/clientes", {
     method: "POST",
@@ -40,6 +36,7 @@ function crearCliente(datos) {
     .then((error) => console.log("Error: ", error));
 }
 
-function pasarPagina(event){
-  crearCliente(event)
+function pasarPagina(event) {
+  crearCliente(event);
 }
+

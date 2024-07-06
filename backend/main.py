@@ -186,8 +186,8 @@ def nuevo_pedido():
         return jsonify(f"no seaaaaaaaaaaaaaa  pudo :{e})"), 400
 
 
-@app.route("/buscar_nombre/<mail>/<pan>/<base>/<adicional>/<salsa>", methods=['GET'])
-def matcheo(mail, pan, base, adicional, salsa):
+@app.route("/mostrar_datos/<mail>/<pan>/<base>/<adicional>/<salsa>", methods=['GET'])
+def datos(mail, pan, base, adicional, salsa):
 
     try:
         nombre_cliente = Clientes.query.filter_by(mail=mail).first()
@@ -195,13 +195,17 @@ def matcheo(mail, pan, base, adicional, salsa):
         nombre_base = Bases.query.get(base)
         nombre_adicional = Adicionales.query.get(adicional)
         nombre_salsa = Salsas.query.get(salsa)
+        precio = nombre_pan.precio+nombre_pan.precio + \
+            nombre_adicional.precio+nombre_salsa.precio
 
         cliente_datos = {
             'nombre': nombre_cliente.nombre_apellido,
+            'mail': mail,
             'pan': nombre_pan.nombre,
             'base': nombre_base.nombre,
             'adicional': nombre_adicional.nombre,
-            'salsa': nombre_salsa.nombre
+            'salsa': nombre_salsa.nombre,
+            'precio': precio
         }
         return jsonify(cliente_datos), 200
 
