@@ -26,8 +26,7 @@ class Clientes(db.Model):
     nombre_apellido = db.Column(db.String(255), nullable=False)
     direccion = db.Column(db.String(255), nullable=False)
     telefono = db.Column(db.Integer, nullable=False)
-    mail = db.Column(db.String(255), nullable=False)
-
+    mail = db.Column(db.String(255), nullable=False, unique=True)
 
 
 class Salsas(db.Model):
@@ -59,8 +58,4 @@ class Pedidos(db.Model):
     id_salsa = db.Column(
         db.Integer, db.ForeignKey('Salsas.id_salsa'))
     mail = db.Column(
-        db.Integer, db.ForeignKey('Clientes.mail'))
-
-   """  fecha = db.Column(db.Date)
-    precio = db.Column(db.Integer)
- """
+        db.String(255), db.ForeignKey('Clientes.mail'))
