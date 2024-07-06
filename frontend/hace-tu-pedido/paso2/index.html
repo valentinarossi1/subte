@@ -1,214 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="../../style.css" rel="stylesheet">
-    <script src="../../script.js"></script>
-    <script src="script.js"></script>
-    <title>SUBTE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="../../style.css" rel="stylesheet">
+  <script src="../../script.js"></script>
+  <script src="script.js"></script>
+  <title>SUBTE</title>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar">
-          <div class="navbar-contenedor">
-            <a class="logo" href="../../index.html"><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"></a>
-            <div class="menu-navbar">
-              <ul class="elementos-navbar">
-                <li><a href="../hacetupedido.html">Hace tu pedido</a></li>
-                <li><a href="../../nosotros/nosotros.html">Nosotros</a></li>
-                <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
-                <li><a href="../../ver-pedidos/index.html">Ver mis pedidos</a></li>
-                
-              </ul>
-            </div>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-contenedor">
+        <a class="logo" href="../../index.html"><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"></a>
+        <div class="menu-navbar">
+          <ul class="elementos-navbar">
+            <li><a href="../hacetupedido.html">Hace tu pedido</a></li>
+            <li><a href="../../nosotros/nosotros.html">Nosotros</a></li>
+            <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
+            <li><a href="../../ver-pedidos/index.html">Ver mis pedidos</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <form class="form-opciones" onsubmit="crearPedido(event)"">
+            <h4 class=" paso">2° PASO: ELEGI TU PAN</h4>
+      <div class="opciones-contenedor">
+        <div class="opcion">
+          <label class="descripciones" for="pan">
+            <img src="../../imagenes/panBlanco.png" alt="pan blanco">
+            Pan blanco - $1000
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=1 type="radio" name="pan" id="1"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
           </div>
-        </nav>
-      </header>
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="pan">
+            <img src="../../imagenes/panIntegral.png" alt="pan integral">
+            Pan integral - $1000
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=2 type="radio" name="pan" id="2"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
 
-      <main>
-      
-          <form class="form-opciones" onsubmit="crearCliente(event)"">
-            <h4 class="paso">2° PASO: ELEGI TU PAN</h4>
-            <div class="opciones-contenedor">
-              <div class="opcion">
-                <label class="descripciones" for="1">
-                  <img src="../../imagenes/panBlanco.png" alt="pan blanco">
-                  Pan blanco - $1000
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=1 type="radio" name="pan"
-                    id="1" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="2">
-                  <img src="../../imagenes/panIntegral.png" alt="pan integral">
-                  Pan integral - $1000
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=2 type="radio" name="pan"
-                    id="2" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-                
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="3">
-                  <img src="../../imagenes/panSinTacc.png" alt="pan sin tacc">
-                  Pan sin TACC - $1000
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=3 type="radio" name="pan"
-                    id="3" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-            </div>
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="pan">
+            <img src="../../imagenes/panSinTacc.png" alt="pan sin tacc">
+            Pan sin TACC - $1000
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=3 type="radio" name="pan" id="3"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+      </div>
 
-            <!-- -------------------------------------------------------------------------------------------------------------- -->
-            <h4 class="paso">3° PASO: ELEGI TU BASE</h4>
-            <div class="opciones-contenedor">
-              <div class="opcion">
-                <label class="descripciones" for="4">
-                  <img src="../../imagenes/carne.png" alt="carne">
-                  Carne - $2500
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=1 type="radio" name="base"
-                    id="4" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="5">
-                  <img src="../../imagenes/pollo.png" alt="pollo">
-                  Pollo - $2000
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=2 type="radio" name="base"
-                    id="5" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-                
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="6">
-                  <img src="../../imagenes/tofu.png" alt="tofu">
-                  Tofu - $2700
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=3 type="radio" name="base"
-                    id="6" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-            </div>
-            <!-- -------------------------------------------------------------------------------------------------------------- -->
+      <!-- -------------------------------------------------------------------------------------------------------------- -->
+      <h4 class="paso">3° PASO: ELEGI TU BASE</h4>
+      <div class="opciones-contenedor">
+        <div class="opcion">
+          <label class="descripciones" for="base">
+            <img src="../../imagenes/carne.png" alt="carne">
+            Carne - $2500
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=1 type="radio" name="base" id="4"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="base">
+            <img src="../../imagenes/pollo.png" alt="pollo">
+            Pollo - $2000
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=2 type="radio" name="base" id="5"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
 
-            <h4 class="paso">4° PASO: ELEGI TU ADICIONAL</h4>
-            <div class="opciones-contenedor">
-              <div class="opcion">
-                <label class="descripciones" for="7">
-                  <img src="../../imagenes/tomate_y_lechuga.png" alt="lechuga-y-tomate">
-                  Lechuga y tomate - $1000
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=1 type="radio" name="adicional"
-                    id="7" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="8">
-                  <img src="../../imagenes/jamon_y_queso.png" alt="jamon-y-queso">
-                  Jamon y queso- $1500
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=2 type="radio" name="adicional"
-                    id="8" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-                
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="9">
-                  <img src="../../imagenes/cheddar_y_bacon.png" alt="cheddar-y-bacon">
-                  Cheddar y bacon - $1900
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=3 type="radio" name="adicional"
-                    id="9" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-            </div>
-            <!-- -------------------------------------------------------------------------------------------------------------- -->
-            <h4 class="paso">5° PASO: ELEGI TU SALSA</h4>
-            <div class="salsa-contenedor">
-              <div class="opcion">
-                <label class="descripciones" for="10">
-                  <img src="../../imagenes/mayonesa.png" alt="mayonesa">
-                  Mayonesa - $500
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=1 type="radio" name="salsa"
-                    id="10" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="11">
-                  <img src="../../imagenes/ketchup.png" alt="ketchup">
-                  Ketchup - $500
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=2 type="radio" name="salsa"
-                    id="11" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-                
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="12">
-                  <img src="../../imagenes/mostaza.png" alt="mostaza">
-                  Mostaza - $500
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=3 type="radio" name="salsa"
-                    id="12" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="13">
-                  <img src="../../imagenes/barbacoa.png" alt="barbacoa">
-                  Barbacoa - $500
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=4 type="radio" name="salsa"
-                    id="13" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="14">
-                  <img src="../../imagenes/salas_golf.png" alt="salsa-golf">
-                  Salsa golf - $500
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=5 type="radio" name="salsa"
-                    id="14" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-                
-              </div>
-              <div class="opcion">
-                <label class="descripciones" for="15">
-                  <img src="../../imagenes/sin_salsa.png" alt="sin-salsa">
-                  Sin salsa - $0
-                </label>
-                <div class="seleccionar">
-                  <input class="form-check-input" value=6 type="radio" name="salsa"
-                    id="15" required ><!-- Este es el id que mando a la tabla pedidos creo -->
-                </div>
-              </div>
-            </div>
-            <div class="formulario-pedidos-boton">
-              <button type="submit">Siguiente</button>
-            </div>
-          </form>  
-       <!--  
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="base">
+            <img src="../../imagenes/tofu.png" alt="tofu">
+            Tofu - $2700
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=3 type="radio" name="base" id="6"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+      </div>
+      <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+      <h4 class="paso">4° PASO: ELEGI TU ADICIONAL</h4>
+      <div class="opciones-contenedor">
+        <div class="opcion">
+          <label class="descripciones" for="adicional">
+            <img src="../../imagenes/tomate_y_lechuga.png" alt="lechuga-y-tomate">
+            Lechuga y tomate - $1000
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=1 type="radio" name="adicional" id="7"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="adicional">
+            <img src="../../imagenes/jamon_y_queso.png" alt="jamon-y-queso">
+            Jamon y queso- $1500
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=2 type="radio" name="adicional" id="8"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="adicional">
+            <img src="../../imagenes/cheddar_y_bacon.png" alt="cheddar-y-bacon">
+            Cheddar y bacon - $1900
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=3 type="radio" name="adicional" id="9"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+      </div>
+      <!-- -------------------------------------------------------------------------------------------------------------- -->
+      <h4 class="paso">5° PASO: ELEGI TU SALSA</h4>
+      <div class="salsa-contenedor">
+        <div class="opcion">
+          <label class="descripciones" for="salsa">
+            <img src="../../imagenes/mayonesa.png" alt="mayonesa">
+            Mayonesa - $500
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=1 type="radio" name="salsa" id="10"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="salsa">
+            <img src="../../imagenes/ketchup.png" alt="ketchup">
+            Ketchup - $500
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=2 type="radio" name="salsa" id="11"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="salsa">
+            <img src="../../imagenes/mostaza.png" alt="mostaza">
+            Mostaza - $500
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=3 type="radio" name="salsa" id="12"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="salsa">
+            <img src="../../imagenes/barbacoa.png" alt="barbacoa">
+            Barbacoa - $500
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=4 type="radio" name="salsa" id="13"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="salsa">
+            <img src="../../imagenes/salas_golf.png" alt="salsa-golf">
+            Salsa golf - $500
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=5 type="radio" name="salsa" id="14"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+
+        </div>
+        <div class="opcion">
+          <label class="descripciones" for="salsa">
+            <img src="../../imagenes/sin_salsa.png" alt="sin-salsa">
+            Sin salsa - $0
+          </label>
+          <div class="seleccionar">
+            <input class="form-check-input" value=6 type="radio" name="salsa" id="15"
+              required><!-- Este es el id que mando a la tabla pedidos creo -->
+          </div>
+        </div>
+      </div>
+      <div class="formulario-pedidos-boton">
+        <button type="submit">Siguiente</button>
+      </div>
+    </form>
+    <!--  
       <
 
 
@@ -245,41 +247,42 @@
         </div>
       
        -->
-        
-      </main>
 
-      <footer>
-        <div class="footer-contenedor">
-          <a class="logo-footer" href="../../index.html"><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"></a>
-          <div class="footer-elemento">
-            <h4>Información</h4>
-            <ul>
-              <li><a href="../../nosotros/nosotros.html">Quienes somos</a></li>
-              <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
-              <li><a href="/">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer-elemento">
-            <h4>Sobre Subte</h4>
-            <p>Dirección: Calle 123</p>
-            <p>Teléfono: (011) 123-4567</p>
-            <p>Email: info@subte.com</p>
-          </div>
-          <div class="footer-elemento">
-            <h4>Legal</h4>
-            <ul>
-              <li><a href="/">Terminos y condiciones</a></li>
-              <li><a href="/">Politica de privacidad</a></li>
-              <li><a href="/">Defensa del consumidor</a></li>
-            </ul>
-          </div>   
-        </div>
-        <div class="redes">
-          <a href="/"><img src="../../imagenes/logo_facebook.png" alt="Facebook"></a>
-          <a href="/"><img src="../../imagenes/logo_x.png" alt="X"></a>
-          <a href="/"><img src="../../imagenes/logo_instagram.png" alt="Instagram"></a>
-        </div>
-      </footer>
+  </main>
+
+  <footer>
+    <div class="footer-contenedor">
+      <a class="logo-footer" href="../../index.html"><img src="../../imagenes/nuevoLogo.jpg" alt="logo de SUBTE"></a>
+      <div class="footer-elemento">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="../../nosotros/nosotros.html">Quienes somos</a></li>
+          <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
+          <li><a href="/">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-elemento">
+        <h4>Sobre Subte</h4>
+        <p>Dirección: Calle 123</p>
+        <p>Teléfono: (011) 123-4567</p>
+        <p>Email: info@subte.com</p>
+      </div>
+      <div class="footer-elemento">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/">Terminos y condiciones</a></li>
+          <li><a href="/">Politica de privacidad</a></li>
+          <li><a href="/">Defensa del consumidor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="redes">
+      <a href="/"><img src="../../imagenes/logo_facebook.png" alt="Facebook"></a>
+      <a href="/"><img src="../../imagenes/logo_x.png" alt="X"></a>
+      <a href="/"><img src="../../imagenes/logo_instagram.png" alt="Instagram"></a>
+    </div>
+  </footer>
 
 </body>
+
 </html>

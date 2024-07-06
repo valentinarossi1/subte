@@ -142,6 +142,7 @@ def nuevo_cliente():
 def nuevo_pedido():
 
     data = request.json
+    print("holaaaaaa")
     try:
         nuevo_pan = data.get('id_pan')
         nueva_base = data.get('id_base')
@@ -162,12 +163,13 @@ def nuevo_pedido():
                 {'pan': nuevo_pedido.id_pan,
                  'base': nuevo_pedido.id_base,
                  'adicional': nuevo_pedido.id_adicional,
-                 'salsa': nuevo_pedido.id_salsa}}
+                 'salsa': nuevo_pedido.id_salsa,
+                 'mail': nuevo_pedido.mail}}
 
         ), 201
 
     except Exception as e:
-        return jsonify(f"no se  pudo :{e})"), 400
+        return jsonify(f"no seaaaaaaaaaaaaaa  pudo :{e})"), 400
 
 
 @app.errorhandler(404)
