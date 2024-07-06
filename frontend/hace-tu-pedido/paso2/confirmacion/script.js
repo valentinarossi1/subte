@@ -1,3 +1,9 @@
+let mail;
+let pan;
+let base;
+let adicional;
+let salsa;
+
 function getQueryParams() {
   const urlParams = new URLSearchParams(window.location.search);
   const params = {};
@@ -38,29 +44,49 @@ function parse_data(content) {
   container.appendChild(item);
 }
 
-function response_received(response) {
-  return response.json();
-}
-
-function request_error(error) {
-  console.log("ERROR");
-  console.log(error);
-}
 function fetchear() {
   const queryParams = getQueryParams();
 
-  const mail = queryParams.mail;
-  const pan = queryParams.pan;
-  const base = queryParams.base;
-  const adicional = queryParams.adicional;
-  const salsa = queryParams.salsa;
+  mail = queryParams.mail;
+  pan = queryParams.pan;
+  base = queryParams.base;
+  adicional = queryParams.adicional;
+  salsa = queryParams.salsa;
 
   fetch(
     `http://localhost:5000/mostrar_datos/${mail}/${pan}/${base}/${adicional}/${salsa}`,
   )
-    .then(response_received)
+    .then((res) => res.json())
     .then(parse_data)
-    .catch(request_error);
+    .catch((error) => console.log("Error: ", error));
+}
+
+function redirigrPedidos(data) {
+  if (data != null) {
+    window.location.href = "../../../ver-pedidos/";
+  } else {
+    alert("ERor" + data);
+  }
+}
+
+function confirmar() {
+  alert(pan);
+  fetch("http://localhost:5000/pedidos", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id_pan: pan,
+      id_base: base,
+      id_adicional: adicional,
+      id_salsa: salsa,
+      mail: mail,
+    }),
+  })
+    .then((res) => res.json())
+    .then(redirigrPedidos)
+    .then((error) => console.log("Error: ACA ACA ", error));
 }
 
 fetchear();
