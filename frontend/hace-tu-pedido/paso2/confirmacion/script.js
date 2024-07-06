@@ -59,24 +59,21 @@ function request_error(error) {
 }
 
 function parse_data(content) {
-    console.log(content);
-    const container = document.getElementById("pedidos-parser");
+  console.log(content);
+  const container = document.getElementById("pedidos-parser");
 
-    for (let index = 0; index < content.length; index++) {
+  for (let index = 0; index < content.length; index++) {
+    const item = document.createElement("li");
 
-        const item = document.createElement("li");  
+    const adicional = document.createElement("p");
+    adicional.textContent = ` - precio : ${content[index].adicional}`;
 
-        const price = document.createElement("span");
-        price.textContent = ` - precio : ${content[index].nombre}`;
-
-
-        item.appendChild(price);
-        alert(item);
-        container.appendChild(item);
-    }
+    item.appendChild(adicional);
+    container.appendChild(item);
+  }
 }
 
 fetch("http://localhost:5000/pedidos")
-.then(response_received)
-.then(parse_data)
-.catch(request_error);
+  .then(response_received)
+  .then(parse_data)
+  .catch(request_error);

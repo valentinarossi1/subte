@@ -1,6 +1,6 @@
 from flask_cors import CORS
 from flask import Flask, jsonify, request, render_template
-from models import db, Clientes, Panes, Pedidos
+from models import db, Clientes, Panes, Pedidos, Bases, Salsas, Adicionales
 
 
 app = Flask(__name__)
@@ -89,30 +89,43 @@ def data_cliente(id_cliente):
 def Listar_pedidos():
 
     try:
+        pedidos_con_nombres = Pedidos.query.join(
+            Panes, Panes.id_pan == Pedidos.id_pan
+        ).join(
+            Bases, Bases.id_base == Pedidos.id_base
+        ).join(
+            Adicionales, Adicionales.id_adicional == Pedidos.id_adicional
+        ).join(
+            Salsas, Salsas.id_salsa == Pedidos.id_salsa
+        ).join(
+            Clientes, Clientes.mail == Pedidos.mail
+        )
 
-        pedidos = Pedidos.query.all()
         pedidos_datos = []
-
-        for pedido in pedidos:
+        for pedido in pedidos_con_nombres:
             dato_pedido = {
-                'pan': pedido.id_pan,
-                'base': pedido.id_base,
-                'adicional': pedido.id_adicional,
-                'salsa': pedido.id_salsa,
-                'mail': pedido.mail}
+                'pan': pedido.Panes.nombre,
+                'base': pedido.Bases.nombre,
+                'adicional': pedido.Adicionales.nombre if pedido.Adicionales else None,
+                'salsa': pedido.Salsas.nombre,
+                'mail': pedido.Clientes.mail,
+            }
             pedidos_datos.append(dato_pedido)
 
         return jsonify(pedidos_datos)
 
     except Exception as e:
-
         return jsonify(f"Error {e}"), 404
 
 
-@app.route("/clientes", methods=["POST"])
+@ app.route("/clientes", methods=["POST"])
 def nuevo_cliente():
 
     data = request.json
+
+    if data is None:
+        return jsonify({'error': 'No se recibieron datos'}), 400
+
     try:
         nuevo_nombre = data.get('nombre_apellido')
         nueva_direccion = data.get('direccion')
@@ -138,11 +151,12 @@ def nuevo_cliente():
         return jsonify(f"no se  pudo :{e})"), 400
 
 
-@app.route("/pedidos", methods=["POST"])
+@ app.route("/pedidos", methods=["POST"])
 def nuevo_pedido():
 
     data = request.json
-    print("holaaaaaa")
+    if data is None:
+        return jsonify({'error': 'No se recibieron datos'}), 400
     try:
         nuevo_pan = data.get('id_pan')
         nueva_base = data.get('id_base')
@@ -172,7 +186,31 @@ def nuevo_pedido():
         return jsonify(f"no seaaaaaaaaaaaaaa  pudo :{e})"), 400
 
 
-@app.errorhandler(404)
+@app.route("/buscar_nombre/<mail>/<pan>/<base>/<adicional>/<salsa>", methods=['GET'])
+def matcheo(mail, pan, base, adicional, salsa):
+
+    try:
+        nombre_cliente = Clientes.query.filter_by(mail=mail).first()
+        nombre_pan = Panes.query.get(pan)
+        nombre_base = Bases.query.get(base)
+        nombre_adicional = Adicionales.query.get(adicional)
+        nombre_salsa = Salsas.query.get(salsa)
+
+        cliente_datos = {
+            'nombre': nombre_cliente.nombre_apellido,
+            'pan': nombre_pan.nombre,
+            'base': nombre_base.nombre,
+            'adicional': nombre_adicional.nombre,
+            'salsa': nombre_salsa.nombre
+        }
+        return jsonify(cliente_datos), 200
+
+    except Exception as e:
+
+        return jsonify(f"Error {e}:  {mail}"), 404
+
+
+@ app.errorhandler(404)
 def pagina_no_encontrada(error):
 
     return render_template('./404.html'), 404

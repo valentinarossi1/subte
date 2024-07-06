@@ -10,6 +10,8 @@ class Panes(db.Model):
     nombre = db.Column(db.String(255), nullable=False)
     precio = db.Column(db.Integer, nullable=False)
 
+    Pedido = db.relationship('Pedidos', backref='Panes')
+
 
 class Bases(db.Model):
     __tablename__ = 'Bases'
@@ -17,6 +19,8 @@ class Bases(db.Model):
     id_base = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     precio = db.Column(db.Integer, nullable=False)
+
+    Pedido = db.relationship('Pedidos', backref='Bases')
 
 
 class Clientes(db.Model):
@@ -27,6 +31,7 @@ class Clientes(db.Model):
     direccion = db.Column(db.String(255), nullable=False)
     telefono = db.Column(db.Integer, nullable=False)
     mail = db.Column(db.String(255), nullable=False, unique=True)
+    Pedido = db.relationship('Pedidos', backref='Clientes')
 
 
 class Salsas(db.Model):
@@ -35,6 +40,7 @@ class Salsas(db.Model):
     id_salsa = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     precio = db.Column(db.Integer, nullable=False)
+    Pedido = db.relationship('Pedidos', backref='Salsas')
 
 
 class Adicionales(db.Model):
@@ -43,6 +49,7 @@ class Adicionales(db.Model):
     id_adicional = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     precio = db.Column(db.Integer, nullable=False)
+    Pedido = db.relationship('Pedidos', backref='Adicionales')
 
 
 class Pedidos(db.Model):
@@ -59,3 +66,27 @@ class Pedidos(db.Model):
         db.Integer, db.ForeignKey('Salsas.id_salsa'))
     mail = db.Column(
         db.String(255), db.ForeignKey('Clientes.mail'))
+
+    pan = db.relationship('Panes', backref=db.backref('Pedidos', lazy=True))
+
+
+""" 
+    try:
+        pedidos = db.session.query(Pedidos, Panes).join(Panes, Pedidos.id_pan == Panes.id_pan).all()
+        pedidos_datos = []
+
+        for pedido, pan in pedidos:
+            dato_pedido = {
+                'pan': pan.nombre,
+                'base': pedido.id_base,
+                'adicional': pedido.id_adicional,
+                'salsa': pedido.id_salsa,
+                'mail': pedido.mail
+            }
+            pedidos_datos.append(dato_pedido)
+
+        return jsonify(pedidos_datos)
+
+    except Exception as e:
+        return jsonify(f"Error {e}"), 404
+"""
