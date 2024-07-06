@@ -68,25 +68,3 @@ class Pedidos(db.Model):
         db.String(255), db.ForeignKey('Clientes.mail'))
 
     pan = db.relationship('Panes', backref=db.backref('Pedidos', lazy=True))
-
-
-""" 
-    try:
-        pedidos = db.session.query(Pedidos, Panes).join(Panes, Pedidos.id_pan == Panes.id_pan).all()
-        pedidos_datos = []
-
-        for pedido, pan in pedidos:
-            dato_pedido = {
-                'pan': pan.nombre,
-                'base': pedido.id_base,
-                'adicional': pedido.id_adicional,
-                'salsa': pedido.id_salsa,
-                'mail': pedido.mail
-            }
-            pedidos_datos.append(dato_pedido)
-
-        return jsonify(pedidos_datos)
-
-    except Exception as e:
-        return jsonify(f"Error {e}"), 404
-"""

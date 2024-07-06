@@ -118,6 +118,42 @@ def Listar_pedidos():
         return jsonify(f"Error {e}"), 404
 
 
+@app.route("/mail/<mail_url>", methods=['GET'])
+def pedidos_mail(mail_url):
+
+    try:
+        cliente = Clientes.query.filter_by(mail=mail_url).first()
+
+        if not cliente:
+            return jsonify({'error': 'Cliente no encontrado'}), 404
+
+        pedidos_con_nombres = Pedidos.query.join(
+            Panes, Panes.id_pan == Pedidos.id_pan
+        ).join(
+            Bases, Bases.id_base == Pedidos.id_base
+        ).join(
+            Adicionales, Adicionales.id_adicional == Pedidos.id_adicional
+        ).join(
+            Salsas, Salsas.id_salsa == Pedidos.id_salsa
+        ).filter(Pedidos.mail == mail_url).all()
+
+        pedidos_datos = []
+        for pedido in pedidos_con_nombres:
+            dato_pedido = {
+                'pan': pedido.Panes.nombre,
+                'base': pedido.Bases.nombre,
+                'adicional': pedido.Adicionales.nombre if pedido.Adicionales else None,
+                'salsa': pedido.Salsas.nombre,
+                'mail': pedido.Clientes.mail,
+            }
+            pedidos_datos.append(dato_pedido)
+
+        return jsonify(pedidos_datos)
+
+    except Exception as e:
+        return jsonify(f"Error {e}"), 404
+
+
 @ app.route("/clientes", methods=["POST"])
 def nuevo_cliente():
 
@@ -220,11 +256,51 @@ def pagina_no_encontrada(error):
     return render_template('./404.html'), 404
 
 
+def init_db():
+    if not Panes.query.first():
+        panes = [
+            Panes(nombre='Pan INTENTO', precio=5),
+            Panes(nombre='Pan de', precio=6),
+            Panes(nombre='Pan INITIAZIACION', precio=7),
+            Panes(nombre='Pan INITIAZIACION', precio=7)
+        ]
+        db.session.bulk_save_objects(panes)
+
+    if not Bases.query.first():
+        bases = [
+            Bases(nombre='Pan INTENTO', precio=5),
+            Bases(nombre='Pan INTENTO', precio=5),
+            Bases(nombre='Pan INTENTO', precio=5),
+            Bases(nombre='Pan INTENTO', precio=5)
+        ]
+        db.session.bulk_save_objects(bases)
+
+    if not Salsas.query.first():
+        salsas = [
+            Salsas(nombre='Pan INTENTO', precio=5),
+            Salsas(nombre='Pan INTENTO', precio=5),
+            Salsas(nombre='Pan INTENTO', precio=5),
+            Salsas(nombre='Pan INTENTO', precio=5),
+        ]
+        db.session.bulk_save_objects(salsas)
+
+    if not Adicionales.query.first():
+        adicionales = [
+            Adicionales(nombre='Pan INTENTO', precio=5),
+            Adicionales(nombre='Pan INTENTO', precio=5),
+            Adicionales(nombre='Pan INTENTO', precio=5),
+            Adicionales(nombre='Pan INTENTO', precio=5),
+        ]
+        db.session.bulk_save_objects(adicionales)
+    db.session.commit()
+
+
 if __name__ == '__main__':
     print('Starting server...')
     db.init_app(app)
     with app.app_context():
         db.create_all()
+        init_db()
 
     app.run(host='0.0.0.0', debug=True, port=port)
     print('Started...')
