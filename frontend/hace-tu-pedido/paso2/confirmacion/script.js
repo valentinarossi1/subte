@@ -3,6 +3,7 @@ let pan;
 let base;
 let adicional;
 let salsa;
+let precio;
 
 function getQueryParams() {
   const urlParams = new URLSearchParams(window.location.search);
