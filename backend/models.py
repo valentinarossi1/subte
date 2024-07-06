@@ -41,7 +41,7 @@ class Salsas(db.Model):
 class Adicionales(db.Model):
     __tablename__ = 'Adicionales'
 
-    id_adiccional = db.Column(db.Integer, primary_key=True)
+    id_adicional = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     precio = db.Column(db.Integer, nullable=False)
 
@@ -51,15 +51,16 @@ class Pedidos(db.Model):
 
     id_pedido = db.Column(db.Integer, primary_key=True)
     id_pan = db.Column(
-        db.Integer, db.ForeignKey('Panes.id_pan'), nullable=False)
+        db.Integer, db.ForeignKey('Panes.id_pan'))
     id_base = db.Column(
-        db.Integer, db.ForeignKey('Bases.id_base'), nullable=False)
-    id_cliente = db.Column(
-        db.Integer, db.ForeignKey('Clientes.id_cliente'), nullable=False)
-    id_adiccional = db.Column(
-        db.Integer, db.ForeignKey('Adicionales.id_adiccional'), nullable=False)
+        db.Integer, db.ForeignKey('Bases.id_base'))
+    id_adicional = db.Column(
+        db.Integer, db.ForeignKey('Adicionales.id_adicional'))
     id_salsa = db.Column(
-        db.Integer, db.ForeignKey('Salsas.id_salsa'), nullable=False)
+        db.Integer, db.ForeignKey('Salsas.id_salsa'))
+    mail = db.Column(
+        db.Integer, db.ForeignKey('Clientes.mail'))
 
-    fecha = db.Column(db.Date, nullable=False)
-    precio = db.Column(db.Integer, nullable=False)
+   """  fecha = db.Column(db.Date)
+    precio = db.Column(db.Integer)
+ """

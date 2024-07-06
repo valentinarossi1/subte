@@ -85,6 +85,29 @@ def data_cliente(id_cliente):
         return jsonify(f"Error {e}:  {id_cliente}"), 404
 
 
+@app.route("/pedidos", methods=['GET'])
+def Listar_pedidos():
+
+    try:
+
+        pedidos = Pedidos.query.all()
+        pedidos_datos = []
+
+        for pedido in pedidos:
+            dato_pedido = {
+                'pan': pedido.id_pan,
+                'base' : pedido.id_base,
+                'adicional': pedido.id_adicional,
+                'salsa': pedido.id_salsa,
+                'mail' : pedido.mail}
+            pedidos_datos.append(dato_pedido)
+
+        return jsonify(pedidos_datos)
+
+    except Exception as e:
+
+        return jsonify(f"Error {e}"), 404
+
 @app.route("/clientes", methods=["POST"])
 def nuevo_cliente():
 
@@ -103,7 +126,7 @@ def nuevo_cliente():
 
         return jsonify(
             {'cliente':
-                {'nombre_apellido': nuevo_cliente.nombre,
+                {'nombre_apellido': nuevo_cliente.nombre_apellido,#ojo nombre
                   'direccion' : nuevo_cliente.direccion,
                   'telefono': nuevo_cliente.telefono,
                  'mail': nuevo_cliente.mail}}
@@ -111,7 +134,41 @@ def nuevo_cliente():
         ), 201
 
     except Exception as e:
-        return jsonify(f"no se  pudo :{e})"), 400
+        return jsonify(f"no se  pudo :{e})"), 400 
+  
+
+@app.route("/pedidos", methods=["POST"])
+def nuevo_pedido():
+
+    data = request.json
+    try:
+        nuevo_pan = data.get('id_pan')
+        nueva_base = data.get('id_base')
+        nuevo_adicional = data.get('id_adicional')
+        nuevo_salsa = data.get('id_salsa')
+        nuevo_cliente = data.get('mail')
+
+        nuevo_pedido = Pedidos(id_pan = nuevo_pan,
+                                 id_base = nueva_base,
+                                 id_adicional = nuevo_adicional, 
+                                 id_salsa = nuevo_salsa,
+                                 mail= nuevo_cliente)
+        db.session.add(nuevo_pedido)
+        db.session.commit()
+
+        return jsonify(
+            {'pedido':
+                {'pan': nuevo_pedido.id_pan,
+                  'base' : nuevo_pedido.id_base,
+                  'adicional': nuevo_pedido.id_adicional,
+                 'salsa': nuevo_pedido.id_salsa}}
+
+        ), 201
+
+    except Exception as e:
+        return jsonify(f"no se  pudo :{e})"), 400 
+    
+    
 
 @app.errorhandler(404)
 def pagina_no_encontrada(error):
@@ -126,3 +183,4 @@ if __name__ == '__main__':
 
     app.run(host='0.0.0.0', debug=True, port=port)
     print('Started...')
+
