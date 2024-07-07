@@ -1,0 +1,38 @@
+
+.confirmacion-contenedor{
+    background-color:#895737;
+    border-radius: 10px;
+    width: 25%;
+    padding: 18px 50px 25px 50px;
+    box-shadow: 1px 1px 5px black;
+    margin: 70px auto 30px;
+    font-size: 30px;
+    color: #F3E9DC;
+    
+
+
+}
+
+.confirmacion-contenedor h4{
+    font-size: 55px;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+.confirmacion-contenedor ul{
+    list-style-type: none;
+    margin: 8px;
+    background-color:#498467;
+    border-radius: 10px;
+    padding: 3px 10px;
+}
+
+
+
+
+/*colores:
+blanco: #F3E9DC
+verde:  #498467
+marron: #895737
+*/

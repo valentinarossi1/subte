@@ -19,7 +19,7 @@ function getQueryParams() {
 function parse_data(content) {
   const container = document.getElementById("pedidos-parser");
 
-  const item = document.createElement("li");
+  const item = document.createElement("ul");
 
   const labels = {
     nombre: "NOMBRE",
@@ -35,7 +35,7 @@ function parse_data(content) {
     const label = labels[key];
     if (label) {
       const span = document.createElement("li");
-      span.textContent = ` ${label}-> : ${content[key]}`;
+      span.textContent = ` ${label} :      ${content[key]}`;
       item.appendChild(span);
     } else {
       console.warn(`Ignoring unknown property: ${key}`);
