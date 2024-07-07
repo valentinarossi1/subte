@@ -27,7 +27,7 @@
               <li><a href="../../nosotros/nosotros.html">Nosotros</a></li>
               <li><a href="../../sucursales/sucursales.html">Sucursales</a></li>
               <li>
-                <a href="../../ver-pedidos/index.html">Ver mis pedidos</a>
+                <a href="../../ver-pedidos/index.html">Ver pedidos</a>
               </li>
             </ul>
           </div>
@@ -40,7 +40,7 @@
         <h4 class="paso">2° PASO: ELEGI TU PAN</h4>
         <div class="opciones-contenedor">
           <div class="opcion">
-            <label class="descripciones" for="pan">
+            <label class="descripciones" for="1">
               <img src="../../imagenes/panBlanco.png" alt="pan blanco" />
               Pan blanco - $1000
             </label>
@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="pan">
+            <label class="descripciones" for="2">
               <img src="../../imagenes/panIntegral.png" alt="pan integral" />
               Pan integral - $1000
             </label>
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="pan">
+            <label class="descripciones" for="3">
               <img src="../../imagenes/panSinTacc.png" alt="pan sin tacc" />
               Pan sin TACC - $1000
             </label>
@@ -93,7 +93,7 @@
         <h4 class="paso">3° PASO: ELEGI TU BASE</h4>
         <div class="opciones-contenedor">
           <div class="opcion">
-            <label class="descripciones" for="base">
+            <label class="descripciones" for="4">
               <img src="../../imagenes/carne.png" alt="carne" />
               Carne - $2500
             </label>
@@ -109,7 +109,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="base">
+            <label class="descripciones" for="5">
               <img src="../../imagenes/pollo.png" alt="pollo" />
               Pollo - $2000
             </label>
@@ -125,7 +125,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="base">
+            <label class="descripciones" for="6">
               <img src="../../imagenes/tofu.png" alt="tofu" />
               Tofu - $2700
             </label>
@@ -146,7 +146,7 @@
         <h4 class="paso">4° PASO: ELEGI TU ADICIONAL</h4>
         <div class="opciones-contenedor">
           <div class="opcion">
-            <label class="descripciones" for="adicional">
+            <label class="descripciones" for="7">
               <img
                 src="../../imagenes/tomate_y_lechuga.png"
                 alt="lechuga-y-tomate"
@@ -165,7 +165,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="adicional">
+            <label class="descripciones" for="8">
               <img src="../../imagenes/jamon_y_queso.png" alt="jamon-y-queso" />
               Jamon y queso- $1500
             </label>
@@ -181,7 +181,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="adicional">
+            <label class="descripciones" for="9">
               <img
                 src="../../imagenes/cheddar_y_bacon.png"
                 alt="cheddar-y-bacon"
@@ -204,7 +204,7 @@
         <h4 class="paso">5° PASO: ELEGI TU SALSA</h4>
         <div class="salsa-contenedor">
           <div class="opcion">
-            <label class="descripciones" for="salsa">
+            <label class="descripciones" for="10">
               <img src="../../imagenes/mayonesa.png" alt="mayonesa" />
               Mayonesa - $500
             </label>
@@ -220,7 +220,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="salsa">
+            <label class="descripciones" for="11">
               <img src="../../imagenes/ketchup.png" alt="ketchup" />
               Ketchup - $500
             </label>
@@ -236,7 +236,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="salsa">
+            <label class="descripciones" for="12">
               <img src="../../imagenes/mostaza.png" alt="mostaza" />
               Mostaza - $500
             </label>
@@ -252,7 +252,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="salsa">
+            <label class="descripciones" for="13">
               <img src="../../imagenes/barbacoa.png" alt="barbacoa" />
               Barbacoa - $500
             </label>
@@ -268,7 +268,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="salsa">
+            <label class="descripciones" for="14">
               <img src="../../imagenes/salas_golf.png" alt="salsa-golf" />
               Salsa golf - $500
             </label>
@@ -284,7 +284,7 @@
             </div>
           </div>
           <div class="opcion">
-            <label class="descripciones" for="salsa">
+            <label class="descripciones" for="15">
               <img src="../../imagenes/sin_salsa.png" alt="sin-salsa" />
               Sin salsa - $0
             </label>
@@ -354,7 +354,6 @@
         if (mail != null) {
           window.location.href = `confirmacion?mail=${mail}&pan=${pan}&base=${base}&adicional=${adicional}&salsa=${salsa}`;
         } else {
-          alert("ERROR no hay mail asociado pero siun id " + id);
           window.location.href = `confirmacion?id=${id}&pan=${pan}&base=${base}&adicional=${adicional}&salsa=${salsa}`;
         }
       }

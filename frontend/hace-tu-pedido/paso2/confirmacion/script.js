@@ -51,7 +51,7 @@ function redirigrPedidos(data) {
   if (data != null) {
     window.location.href = "../../../ver-pedidos/";
   } else {
-    alert("ERor" + data);
+    alert("Error" + data);
   }
 }
 
@@ -115,7 +115,6 @@ function mostar_datos() {
   salsa = queryParams.salsa;
 
   if (mail != null) {
-    alert("mail" + mail);
     fetch(
       `http://localhost:5000/mostrar_datos/${mail}/${pan}/${base}/${adicional}/${salsa}`,
     )
@@ -123,7 +122,6 @@ function mostar_datos() {
       .then(parse_data)
       .catch((error) => console.log("Error: ", error));
   } else if (id != null) {
-    alert("id" + id);
     fetch(
       `http://localhost:5000/mostrar_datos/${id}/${pan}/${base}/${adicional}/${salsa}`,
     )

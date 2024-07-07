@@ -284,18 +284,18 @@ def datos(mail, pan, base, adicional, salsa):
 
     try:
         nombre_cliente = Clientes.query.filter_by(mail=mail).first()
-        print(nombre_cliente)
+        
         if nombre_cliente is None:
             pedido_aux = Pedidos.query.get(mail)
             mail_mail = pedido_aux.mail
             nombre_cliente = Clientes.query.filter_by(mail=mail_mail).first()
-            print("hahfaefaehfahehfahehfaefahehf")
+            
 
         nombre_pan = Panes.query.get(pan)
         nombre_base = Bases.query.get(base)
         nombre_adicional = Adicionales.query.get(adicional)
         nombre_salsa = Salsas.query.get(salsa)
-        precio = nombre_pan.precio+nombre_pan.precio + \
+        precio = nombre_pan.precio+nombre_base.precio + \
             nombre_adicional.precio+nombre_salsa.precio
 
         cliente_datos = {
@@ -324,37 +324,36 @@ def pagina_no_encontrada(error):
 def init_db():
     if not Panes.query.first():
         panes = [
-            Panes(nombre='Pan INTENTO', precio=5),
-            Panes(nombre='Pan de', precio=6),
-            Panes(nombre='Pan INITIAZIACION', precio=7),
-            Panes(nombre='Pan INITIAZIACION', precio=7)
+            Panes(nombre='Pan blanco', precio=1000),
+            Panes(nombre='Pan integral', precio=1000),
+            Panes(nombre='Pan sin TACC', precio=1000),
         ]
         db.session.bulk_save_objects(panes)
 
     if not Bases.query.first():
         bases = [
-            Bases(nombre='Pan INTENTO', precio=5),
-            Bases(nombre='Pan INTENTO', precio=5),
-            Bases(nombre='Pan INTENTO', precio=5),
-            Bases(nombre='Pan INTENTO', precio=5)
+            Bases(nombre='Carne', precio=2500),
+            Bases(nombre='Pollo', precio=2000),
+            Bases(nombre='Tofu', precio=2700),
         ]
         db.session.bulk_save_objects(bases)
 
     if not Salsas.query.first():
         salsas = [
-            Salsas(nombre='Pan INTENTO', precio=5),
-            Salsas(nombre='Pan INTENTO', precio=5),
-            Salsas(nombre='Pan INTENTO', precio=5),
-            Salsas(nombre='Pan INTENTO', precio=5),
+            Salsas(nombre='Mayonesa', precio=500),
+            Salsas(nombre='Ketchup', precio=500),
+            Salsas(nombre='Mostaza', precio=500),
+            Salsas(nombre='Barbacoa', precio=500),
+            Salsas(nombre='Salsa golf', precio=500),
+            Salsas(nombre='Sin salsa', precio=0),
         ]
         db.session.bulk_save_objects(salsas)
 
     if not Adicionales.query.first():
         adicionales = [
-            Adicionales(nombre='Pan INTENTO', precio=5),
-            Adicionales(nombre='Pan INTENTO', precio=5),
-            Adicionales(nombre='Pan INTENTO', precio=5),
-            Adicionales(nombre='Pan INTENTO', precio=5),
+            Adicionales(nombre='Lechuga y tomate', precio=1000),
+            Adicionales(nombre='Jamon y queso', precio=1500),
+            Adicionales(nombre='Cheddar y bacon', precio=1900),
         ]
         db.session.bulk_save_objects(adicionales)
     db.session.commit()
