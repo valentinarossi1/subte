@@ -104,6 +104,7 @@ def Listar_pedidos():
         pedidos_datos = []
         for pedido in pedidos_con_nombres:
             dato_pedido = {
+                'id_pedido': pedido.id_pedido,
                 'pan': pedido.Panes.nombre,
                 'base': pedido.Bases.nombre,
                 'adicional':
@@ -137,6 +138,41 @@ def Listar_pedidos_id(id):
 
     except Exception as e:
         return jsonify(f"Error {e}"), 404
+
+
+@ app.route("/pedidos", methods=["POST"])
+def nuevo_pedido():
+
+    data = request.json
+    if data is None:
+        return jsonify({'error': 'No se recibieron datos'}), 400
+    try:
+        nuevo_pan = data.get('id_pan')
+        nueva_base = data.get('id_base')
+        nuevo_adicional = data.get('id_adicional')
+        nuevo_salsa = data.get('id_salsa')
+        nuevo_cliente = data.get('mail')
+
+        nuevo_pedido = Pedidos(id_pan=nuevo_pan,
+                               id_base=nueva_base,
+                               id_adicional=nuevo_adicional,
+                               id_salsa=nuevo_salsa,
+                               mail=nuevo_cliente)
+        db.session.add(nuevo_pedido)
+        db.session.commit()
+
+        return jsonify(
+            {'pedido':
+                {'pan': nuevo_pedido.id_pan,
+                 'base': nuevo_pedido.id_base,
+                 'adicional': nuevo_pedido.id_adicional,
+                 'salsa': nuevo_pedido.id_salsa,
+                 'mail': nuevo_pedido.mail}}
+
+        ), 201
+
+    except Exception as e:
+        return jsonify(f"no seaaaaaaaaaaaaaa  pudo :{e})"), 400
 
 
 @app.route("/mail/<mail_url>", methods=['GET'])
@@ -207,41 +243,6 @@ def nuevo_cliente():
 
     except Exception as e:
         return jsonify(f"no se  pudo :{e})"), 400
-
-
-@ app.route("/pedidos", methods=["POST"])
-def nuevo_pedido():
-
-    data = request.json
-    if data is None:
-        return jsonify({'error': 'No se recibieron datos'}), 400
-    try:
-        nuevo_pan = data.get('id_pan')
-        nueva_base = data.get('id_base')
-        nuevo_adicional = data.get('id_adicional')
-        nuevo_salsa = data.get('id_salsa')
-        nuevo_cliente = data.get('mail')
-
-        nuevo_pedido = Pedidos(id_pan=nuevo_pan,
-                               id_base=nueva_base,
-                               id_adicional=nuevo_adicional,
-                               id_salsa=nuevo_salsa,
-                               mail=nuevo_cliente)
-        db.session.add(nuevo_pedido)
-        db.session.commit()
-
-        return jsonify(
-            {'pedido':
-                {'pan': nuevo_pedido.id_pan,
-                 'base': nuevo_pedido.id_base,
-                 'adicional': nuevo_pedido.id_adicional,
-                 'salsa': nuevo_pedido.id_salsa,
-                 'mail': nuevo_pedido.mail}}
-
-        ), 201
-
-    except Exception as e:
-        return jsonify(f"no seaaaaaaaaaaaaaa  pudo :{e})"), 400
 
 
 @app.route("/mostrar_datos/<mail>/<pan>/<base>/<adicional>/<salsa>",

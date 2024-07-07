@@ -7,6 +7,7 @@ function parse_data(content) {
     base: "BASE",
     pan: "PAN",
     salsa: "SALSA",
+    id_pedido: "ID",
   };
 
   for (let index = 0; index < content.length; index++) {
@@ -15,7 +16,7 @@ function parse_data(content) {
 
     const link = document.createElement("a");
     link.textContent = `${content[index].mail}`;
-    link.setAttribute("href", `/cclientes?${content[index].id}`);
+    link.setAttribute("href", `editar?${content[index].id_pedido}`);
     link.setAttribute("target", "_blank");
     item.appendChild(link);
 
@@ -28,7 +29,7 @@ function parse_data(content) {
         span.textContent = ` ${label}-> : ${content[index][key]}`;
         item.appendChild(span);
       } else {
-        console.warn(`Igorando propiedad desconocida ${key}`);
+        console.log(`Igorando propiedad desconocida ${key}`);
       }
     }
     container.appendChild(item);
