@@ -38,21 +38,21 @@ function parse_data(content) {
     editar.setAttribute("target", "_blank");
 
     item.appendChild(editar);
-    const iconoEditar = document.createElement('i'); 
-    iconoEditar.classList.add('fa-regular', 'fa-pen-to-square');
-    editar.classList.add('editar');
+    const iconoEditar = document.createElement("i");
+    iconoEditar.classList.add("fa-regular", "fa-pen-to-square");
+    editar.classList.add("editar");
     editar.appendChild(iconoEditar);
 
     const eliminar = document.createElement("a");
     eliminar.textContent = `eliminar   `;
     eliminar.setAttribute("href", `editar?${content[index].id_pedido}`);
     eliminar.setAttribute("target", "_blank");
-    eliminar.classList.add('basura');
+    eliminar.classList.add("basura");
     item.appendChild(eliminar);
 
-    const iconoEliminar = document.createElement('i'); 
-    iconoEliminar.classList.add('fa-regular', 'fa-trash-can');
-    iconoEliminar.classList.add('basura');
+    const iconoEliminar = document.createElement("i");
+    iconoEliminar.classList.add("fa-regular", "fa-trash-can");
+    iconoEliminar.classList.add("basura");
     eliminar.appendChild(iconoEliminar);
   }
 }
