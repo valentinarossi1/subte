@@ -264,7 +264,7 @@ def datos(mail, pan, base, adicional, salsa):
             nombre_adicional.precio+nombre_salsa.precio
 
         cliente_datos = {
-            'nombre': nombre_cliente.nombre,
+            'nombre': nombre_cliente.nombre_apellido,
             'mail': mail,
             'pan': nombre_pan.nombre,
             'base': nombre_base.nombre,
@@ -276,7 +276,8 @@ def datos(mail, pan, base, adicional, salsa):
 
     except Exception as e:
 
-        return jsonify(f"Error {e}:  {mail}"), 404
+        print(e)
+        return jsonify(f"Errorefaefa e {e}:  {mail}"), 404
 
 
 @ app.errorhandler(404)

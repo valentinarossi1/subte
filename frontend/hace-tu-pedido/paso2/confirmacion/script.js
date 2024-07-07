@@ -39,7 +39,7 @@ function parse_data(content) {
       span.textContent = ` ${label} :      ${content[key]}`;
       item.appendChild(span);
     } else {
-      console.warn(`Ignoring unknown property: ${key}`);
+      console.log(`Ignoring unknown property: ${key}`);
     }
   }
 
