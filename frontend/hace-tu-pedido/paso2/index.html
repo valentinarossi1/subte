@@ -345,6 +345,9 @@
     </footer>
 
     <script>
+
+    const mailFromUrl = getQueryParam("mail");
+
       function pasarPagina(mail, pan, base, adicional, salsa) {
         if (mail != null) {
           window.location.href = `confirmacion?mail=${mail}&pan=${pan}&base=${base}&adicional=${adicional}&salsa=${salsa}`;
@@ -357,8 +360,6 @@
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
       }
-
-      const mailFromUrl = getQueryParam("mail");
 
       function pasarDatos(datos) {
         datos.preventDefault();

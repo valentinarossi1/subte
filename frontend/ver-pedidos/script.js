@@ -8,6 +8,7 @@ function parse_data(content) {
     pan: "PAN",
     salsa: "SALSA",
     id_pedido: "ID",
+    mail: "MAIL",
   };
 
   for (let index = 0; index < content.length; index++) {
