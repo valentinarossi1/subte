@@ -17,8 +17,10 @@ function parse_data(content) {
 
     const link = document.createElement("a");
     link.textContent = `${content[index].mail}`;
-    link.setAttribute("href", `editar?${content[index].id_pedido}`);
-    link.setAttribute("target", "_blank");
+    link.setAttribute(
+      "href",
+      `../hace-tu-pedido/paso2?id=${content[index].id_pedido}`,
+    );
     item.appendChild(link);
 
     for (const key in content[index]) {
