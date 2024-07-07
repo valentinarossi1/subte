@@ -300,32 +300,6 @@ header{
     text-decoration: underline dotted;
 }
 
-.confirmacion-contenedor {
-    margin: 50px auto;
-    background-color: #895737;
-    width: 50%;
-    height: 400px;
-    border-radius: 10px;
-    text-decoration: none;
-}
-
-.confirmacion-contenedor li{
-    text-decoration: none;
-    font-size: 50px;
-}
-.confirmacion-contenedor h4 {
-    font-size: 50px;
-    text-align: center;
-    
-}
-
-.confirmacion-contenedor h1{
-    color: pink;
-}
-
-.no-funciona{
-    color: pink;
-}
 
 footer {
     background-color: #895737;

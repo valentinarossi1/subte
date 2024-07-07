@@ -33,7 +33,7 @@ function parse_data(content) {
 
     const editar = document.createElement("a");
     editar.textContent = `editar   `;
-    editar.setAttribute("href", `editar?${content[index].id_pedido}`);
+    editar.setAttribute("href", `../hace-tu-pedido/paso2?id=${content[index].id_pedido}`);
     editar.classList.add('editar');
     editar.setAttribute("target", "_blank");
 
