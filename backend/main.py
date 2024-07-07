@@ -106,13 +106,34 @@ def Listar_pedidos():
             dato_pedido = {
                 'pan': pedido.Panes.nombre,
                 'base': pedido.Bases.nombre,
-                'adicional': pedido.Adicionales.nombre if pedido.Adicionales else None,
+                'adicional':
+                pedido.Adicionales.nombre if pedido.Adicionales else None,
                 'salsa': pedido.Salsas.nombre,
                 'mail': pedido.Clientes.mail,
             }
             pedidos_datos.append(dato_pedido)
 
         return jsonify(pedidos_datos)
+
+    except Exception as e:
+        return jsonify(f"Error {e}"), 404
+
+
+@app.route("/pedidos/<id>", methods=['GET'])
+def Listar_pedidos_id(id):
+
+    pedido = Pedidos.query.get(id)
+    try:
+
+        pedido_dato = {
+            'pan': pedido.id_pan,
+            'base': pedido.id_base,
+            'adicional': pedido.id_adicional,
+            'salsa': pedido.id_salsa,
+            'mail': pedido.mail
+        }
+
+        return jsonify(pedido_dato)
 
     except Exception as e:
         return jsonify(f"Error {e}"), 404
@@ -142,7 +163,8 @@ def pedidos_mail(mail_url):
             dato_pedido = {
                 'pan': pedido.Panes.nombre,
                 'base': pedido.Bases.nombre,
-                'adicional': pedido.Adicionales.nombre if pedido.Adicionales else None,
+                'adicional':
+                pedido.Adicionales.nombre if pedido.Adicionales else None,
                 'salsa': pedido.Salsas.nombre,
                 'mail': pedido.Clientes.mail,
             }
@@ -176,7 +198,7 @@ def nuevo_cliente():
 
         return jsonify(
             {'cliente':
-                {'nombre_apellido': nuevo_cliente.nombre_apellido,  # ojo nombre
+                {'nombre_apellido': nuevo_cliente.nombre_apellido,
                  'direccion': nuevo_cliente.direccion,
                  'telefono': nuevo_cliente.telefono,
                  'mail': nuevo_cliente.mail}}
@@ -222,7 +244,8 @@ def nuevo_pedido():
         return jsonify(f"no seaaaaaaaaaaaaaa  pudo :{e})"), 400
 
 
-@app.route("/mostrar_datos/<mail>/<pan>/<base>/<adicional>/<salsa>", methods=['GET'])
+@app.route("/mostrar_datos/<mail>/<pan>/<base>/<adicional>/<salsa>",
+           methods=['GET'])
 def datos(mail, pan, base, adicional, salsa):
 
     try:
