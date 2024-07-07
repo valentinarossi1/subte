@@ -175,6 +175,39 @@ def nuevo_pedido():
         return jsonify(f"no seaaaaaaaaaaaaaa  pudo :{e})"), 400
 
 
+@app.route("/pedidos/<int:pedido_id>", methods=["PUT"])
+def modificar_pedido(pedido_id):
+    data = request.json
+    if data is None:
+        return jsonify({'error': 'No se recibieron datos'}), 400
+
+    try:
+        pedido = Pedidos.query.get(pedido_id)
+        if pedido is None:
+            return jsonify({'error': 'Pedido no encontrado'}), 404
+
+        # Actualizar los campos del pedido
+        pedido.id_pan = data.get('id_pan', pedido.id_pan)
+        pedido.id_base = data.get('id_base', pedido.id_base)
+        pedido.id_adicional = data.get('id_adicional', pedido.id_adicional)
+        pedido.id_salsa = data.get('id_salsa', pedido.id_salsa)
+        pedido.mail = data.get('mail', pedido.mail)
+
+        db.session.commit()
+
+        return jsonify(
+            {'pedido':
+                {'pan': pedido.id_pan,
+                 'base': pedido.id_base,
+                 'adicional': pedido.id_adicional,
+                 'salsa': pedido.id_salsa,
+                 'mail': pedido.mail}}
+        ), 200
+
+    except Exception as e:
+        return jsonify(f"No se pudo actualizar el pedido: {e}"), 400
+
+
 @app.route("/mail/<mail_url>", methods=['GET'])
 def pedidos_mail(mail_url):
 
@@ -251,10 +284,12 @@ def datos(mail, pan, base, adicional, salsa):
 
     try:
         nombre_cliente = Clientes.query.filter_by(mail=mail).first()
+        print(nombre_cliente)
         if nombre_cliente is None:
             pedido_aux = Pedidos.query.get(mail)
             mail_mail = pedido_aux.mail
             nombre_cliente = Clientes.query.filter_by(mail=mail_mail).first()
+            print("hahfaefaehfahehfahehfaefahehf")
 
         nombre_pan = Panes.query.get(pan)
         nombre_base = Bases.query.get(base)

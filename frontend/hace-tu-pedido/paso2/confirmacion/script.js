@@ -1,5 +1,6 @@
-let mail;
+const queryParams = getQueryParams();
 let pan;
+let mail;
 let base;
 let adicional;
 let salsa;
@@ -54,7 +55,15 @@ function redirigrPedidos(data) {
   }
 }
 
-function confirmar() {}
+function confirmar() {
+  mail = queryParams.mail;
+  if (mail != null) {
+    subir_datos();
+  } else {
+    modificar_datos();
+  }
+}
+function modificar_datos() {}
 
 function subir_datos() {
   fetch("http://localhost:5000/pedidos", {
@@ -76,8 +85,6 @@ function subir_datos() {
 }
 
 function mostar_datos() {
-  const queryParams = getQueryParams();
-
   id = queryParams.id;
 
   mail = queryParams.mail;
@@ -87,6 +94,7 @@ function mostar_datos() {
   salsa = queryParams.salsa;
 
   if (mail != null) {
+    alert("mail" + mail);
     fetch(
       `http://localhost:5000/mostrar_datos/${mail}/${pan}/${base}/${adicional}/${salsa}`,
     )
@@ -94,6 +102,7 @@ function mostar_datos() {
       .then(parse_data)
       .catch((error) => console.log("Error: ", error));
   } else if (id != null) {
+    alert("id" + id);
     fetch(
       `http://localhost:5000/mostrar_datos/${id}/${pan}/${base}/${adicional}/${salsa}`,
     )
