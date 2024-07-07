@@ -345,14 +345,16 @@
     </footer>
 
     <script>
+      const mailFromUrl = getQueryParam("mail");
 
-    const mailFromUrl = getQueryParam("mail");
+      const idFromUrl = getQueryParam("id");
 
-      function pasarPagina(mail, pan, base, adicional, salsa) {
+      function pasarPagina(mail, pan, base, adicional, salsa, id) {
         if (mail != null) {
           window.location.href = `confirmacion?mail=${mail}&pan=${pan}&base=${base}&adicional=${adicional}&salsa=${salsa}`;
         } else {
-          alert("ERROR no hay mail asociado");
+          alert("ERROR no hay mail asociado pero siun id " + id);
+          window.location.href = `confirmacion?id=${id}&pan=${pan}&base=${base}&adicional=${adicional}&salsa=${salsa}`;
         }
       }
 
@@ -366,12 +368,13 @@
         datosForm = new FormData(datos.target);
 
         mail = mailFromUrl;
+        id = idFromUrl;
         const pan = datosForm.get("pan");
         const base = datosForm.get("base");
         const adicional = datosForm.get("adicional");
         const salsa = datosForm.get("salsa");
 
-        pasarPagina(mail, pan, base, adicional, salsa);
+        pasarPagina(mail, pan, base, adicional, salsa, id);
       }
     </script>
   </body>

@@ -19,6 +19,7 @@ function getQueryParams() {
 function parse_data(content) {
   const container = document.getElementById("pedidos-parser");
 
+  console.log(content);
   const item = document.createElement("ul");
 
   const labels = {
@@ -45,23 +46,6 @@ function parse_data(content) {
   container.appendChild(item);
 }
 
-function fetchear() {
-  const queryParams = getQueryParams();
-
-  mail = queryParams.mail;
-  pan = queryParams.pan;
-  base = queryParams.base;
-  adicional = queryParams.adicional;
-  salsa = queryParams.salsa;
-
-  fetch(
-    `http://localhost:5000/mostrar_datos/${mail}/${pan}/${base}/${adicional}/${salsa}`,
-  )
-    .then((res) => res.json())
-    .then(parse_data)
-    .catch((error) => console.log("Error: ", error));
-}
-
 function redirigrPedidos(data) {
   if (data != null) {
     window.location.href = "../../../ver-pedidos/";
@@ -70,8 +54,9 @@ function redirigrPedidos(data) {
   }
 }
 
-function confirmar() {
-  alert(pan);
+function confirmar() {}
+
+function subir_datos() {
   fetch("http://localhost:5000/pedidos", {
     method: "POST",
     headers: {
@@ -87,7 +72,34 @@ function confirmar() {
   })
     .then((res) => res.json())
     .then(redirigrPedidos)
-    .then((error) => console.log("Error: ACA ACA ", error));
+    .then((error) => console.log("Error:  ", error));
 }
 
-fetchear();
+function mostar_datos() {
+  const queryParams = getQueryParams();
+
+  id = queryParams.id;
+
+  mail = queryParams.mail;
+  pan = queryParams.pan;
+  base = queryParams.base;
+  adicional = queryParams.adicional;
+  salsa = queryParams.salsa;
+
+  if (mail != null) {
+    fetch(
+      `http://localhost:5000/mostrar_datos/${mail}/${pan}/${base}/${adicional}/${salsa}`,
+    )
+      .then((res) => res.json())
+      .then(parse_data)
+      .catch((error) => console.log("Error: ", error));
+  } else if (id != null) {
+    fetch(
+      `http://localhost:5000/mostrar_datos/${id}/${pan}/${base}/${adicional}/${salsa}`,
+    )
+      .then((res) => res.json())
+      .then(parse_data)
+      .catch((error) => console.log("Error: ", error));
+  }
+}
+mostar_datos();

@@ -251,6 +251,11 @@ def datos(mail, pan, base, adicional, salsa):
 
     try:
         nombre_cliente = Clientes.query.filter_by(mail=mail).first()
+        if nombre_cliente is None:
+            pedido_aux = Pedidos.query.get(mail)
+            mail_mail = pedido_aux.mail
+            nombre_cliente = Clientes.query.filter_by(mail=mail_mail).first()
+
         nombre_pan = Panes.query.get(pan)
         nombre_base = Bases.query.get(base)
         nombre_adicional = Adicionales.query.get(adicional)
@@ -259,7 +264,7 @@ def datos(mail, pan, base, adicional, salsa):
             nombre_adicional.precio+nombre_salsa.precio
 
         cliente_datos = {
-            'nombre': nombre_cliente.nombre_apellido,
+            'nombre': nombre_cliente.nombre,
             'mail': mail,
             'pan': nombre_pan.nombre,
             'base': nombre_base.nombre,
