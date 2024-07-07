@@ -25,6 +25,7 @@ function parse_data(content) {
 
   const labels = {
     nombre: "NOMBRE",
+    direccion: "DIRECCION",
     mail: "MAIL",
     pan: "PAN",
     base: "BASE",

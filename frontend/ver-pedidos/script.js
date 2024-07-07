@@ -7,7 +7,6 @@ function parse_data(content) {
     base: "BASE",
     adicional: "ADICIONAL",
     salsa: "SALSA",
-    /*id_pedido: "ID",*/
   };
 
   for (let index = 0; index < content.length; index++) {
@@ -45,9 +44,9 @@ function parse_data(content) {
 
     const eliminar = document.createElement("a");
     eliminar.textContent = `eliminar   `;
-    eliminar.setAttribute("href", `editar?${content[index].id_pedido}`);
-    eliminar.setAttribute("target", "_blank");
     eliminar.classList.add("basura");
+    eliminar.addEventListener('click', function() {
+      eliminar_pedido(content[index].id_pedido);});
     item.appendChild(eliminar);
 
     const iconoEliminar = document.createElement("i");
@@ -56,6 +55,30 @@ function parse_data(content) {
     eliminar.appendChild(iconoEliminar);
   }
 }
+
+
+function eliminar_pedido(id){  
+
+  const confirmacion = confirm(`Seguro que desea eliminar el pedido ${id}?`)
+    if (confirmacion) {
+      fetch(`http://localhost:5000/pedidos/${id}`, {
+          method: 'DELETE',
+      })
+        .then(res => {
+          if (res.ok) {
+              alert('Pedido eliminado');
+              window.location.reload();
+              const pedido = document.getElementById(`pedido-${id}`);
+              if (pedido) {
+                  pedido.parentNode.removeChild(pedido);
+              }
+          } 
+      })
+        .then((error) => console.log("Error: ", error));
+  }
+}
+
+
 
 fetch("http://localhost:5000/pedidos")
   .then((res) => res.json())

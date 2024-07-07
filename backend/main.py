@@ -300,6 +300,7 @@ def datos(mail, pan, base, adicional, salsa):
 
         cliente_datos = {
             'nombre': nombre_cliente.nombre_apellido,
+            'direccion': nombre_cliente.direccion,
             'mail': mail,
             'pan': nombre_pan.nombre,
             'base': nombre_base.nombre,
@@ -314,8 +315,21 @@ def datos(mail, pan, base, adicional, salsa):
         print(e)
         return jsonify(f"Errorefaefa e {e}:  {mail}"), 404
 
+@app.route("/pedidos/<id>", methods=['DELETE'])
+def eliminar_pedido(id):
+        pedido = Pedidos.query.get(id)
+        if pedido:
+            try:
+                db.session.delete(pedido)
+                db.session.commit()
+                return jsonify({"message": "Pedido eliminado exitosamente"}), 200
+            except Exception as e:
+                return jsonify(f"Error: {e}"), 500
+        else:
+            return jsonify({"message": "Pedido no encontrado"}), 404
 
-@ app.errorhandler(404)
+
+@app.errorhandler(404)
 def pagina_no_encontrada(error):
 
     return render_template('./404.html'), 404

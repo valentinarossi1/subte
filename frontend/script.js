@@ -1,10 +1,7 @@
 let indiceImagen = 0;
 
-mostrarImagen(indiceImagen);  /*muestra la primera imagen*/
-
-
-function deslizarImagen(i){
-  indiceImagen += i
+function deslizarImagen(n){
+  indiceImagen += n
   mostrarImagen(indiceImagen)
 }
 
@@ -26,3 +23,4 @@ function mostrarImagen(indice){
   imagenes[indiceImagen].style.display = "block";  /*muestra la imagen que indica el indice*/
 
 }
+
