@@ -63,7 +63,28 @@ function confirmar() {
     modificar_datos();
   }
 }
-function modificar_datos() {}
+function modificar_datos() {
+  id = queryParams.id;
+
+  data = {
+    id_pan: pan,
+    id_base: base,
+    id_adicional: adicional,
+    id_salsa: salsa,
+    mail: mail,
+  };
+
+  fetch(`http://localhost:5000/pedidos/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then(redirigrPedidos)
+    .catch((error) => console.log("Error23123: ", error));
+}
 
 function subir_datos() {
   fetch("http://localhost:5000/pedidos", {
