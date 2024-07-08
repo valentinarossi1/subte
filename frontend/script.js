@@ -1,8 +1,7 @@
 let indiceImagen = 0;
-mostrarImagen(indiceImagen);   /*muestra la primera imagen*/
 
-function deslizarImagen(i){
-  indiceImagen += i
+function deslizarImagen(n){
+  indiceImagen += n
   mostrarImagen(indiceImagen)
 }
 
@@ -25,28 +24,3 @@ function mostrarImagen(indice){
 
 }
 
-function response_received(response) {
-  return response.json();
-}
-
-function request_error(error) {
-  console.log("ERROR");
-  console.log(error);
-}
-
-function parse_data(content) {
-  console.log(content);
-  const container = document.getElementById("clientes");
-
-  for (let index = 0; index < content.length; index++) {
-    const item = document.createElement("p");
-    item.innerHTML = <a href="/clientes?${content[index].id}" target=blank> ${content[index].nombre}</a> - direccion: ${content[index].direccion};
-
-    container.append(item);
-  }
-}
-
-fetch("http://localhost:5000/clientes")
-  .then(response_received)
-  .then(parse_data)
-  .catch(request_error);
