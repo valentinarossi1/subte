@@ -42,11 +42,15 @@
 
 .basura:hover{
     color: rgb(255, 67, 67);
+    cursor: pointer;
 }
 
 .editar:hover{
     color: #498467;
+
 }
+
+
 
 
 

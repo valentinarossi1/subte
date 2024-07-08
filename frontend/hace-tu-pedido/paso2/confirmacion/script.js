@@ -131,4 +131,5 @@ function mostar_datos() {
       .catch((error) => console.log("Error: ", error));
   }
 }
+
 mostar_datos();
